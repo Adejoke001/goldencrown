@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Golden Crown Church History – Our Journey as an RCCG Zone">
+    <title>Our History - Golden Crown Church (RCCG Zone)</title>
+    <link rel="shortcut icon" href="/images/logo2.ico" type="image/x-icon">
+
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS (Animate on Scroll) CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Custom Styles - Matching Homepage */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+        }
+
+        .blue-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+
+        .rccg-gradient {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+        }
+
+        .nav-link-hover:hover {
+            color: #d97706 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-rccg {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-rccg:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(204, 0, 0, 0.3);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(217, 119, 6, 0.3);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom,
+                    rgba(30, 41, 59, 0.3) 0%,
+                    rgba(15, 23, 42, 0.6) 70%,
+                    rgba(2, 6, 23, 0.8) 100%);
+        }
+
+        /* History Timeline */
+        .history-timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .history-timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, #d97706, #f59e0b);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 25px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #d97706;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            border-left: none;
+            border-right: 4px solid #1e40af;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: #d97706;
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+            box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.2);
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -12px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+            background-color: #1e40af;
+        }
+
+        .timeline-year {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+        }
+
+        /* History Cards */
+        .history-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-top: 4px solid #d97706;
+        }
+
+        .history-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .history-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            color: white;
+        }
+
+        /* Founder Section */
+        .founder-img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .pastor-large-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Milestone Counter */
+        .milestone-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        /* Historical Quote */
+        .history-quote {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: 1rem;
+            padding: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .history-quote::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Container fix for full width */
+        .full-width-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Responsive image fixes */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .history-card {
+                padding: 1.5rem;
+            }
+
+            .history-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .founder-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .pastor-large-img {
+                height: 300px;
+            }
+
+            .milestone-number {
+                font-size: 2.5rem;
+            }
+
+            /* Timeline Responsive */
+            .history-timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+                background-color: #d97706;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content {
+                border-left: 4px solid #d97706;
+                border-right: none;
+            }
+
+            .timeline-item:nth-child(even) .timeline-year {
+                background: linear-gradient(135deg, #d97706, #f59e0b);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: 1.8rem !important;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .gallery-item {
+                height: 180px;
+            }
+
+            .pastor-large-img {
+                height: 250px;
+            }
+        }
+
+        .footer-top-overlay {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95));
+        }
+
+        /* Fix for any horizontal scroll */
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Ensure all sections are full width */
+        section,
+        .section {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* Legacy Section */
+        .legacy-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%);
+            border-radius: 1rem;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 2px solid #fbbf24;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .legacy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #d97706, #f59e0b);
+        }
+
+        /* Stat Counter Animation */
+        .counter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #d97706;
+        }
+
+        /* RCCG Colors */
+        .rccg-red {
+            color: #CC0000;
+        }
+
+        .rccg-bg-red {
+            background-color: #CC0000;
+        }
+
+        .rccg-gradient {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-white shadow-lg">
+        <div class="w-full px-4 md:px-6">
+            <div class="flex justify-between items-center py-2">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold">
+                    <div class="w-10 h-10 rccg-gradient rounded-full flex items-center justify-center">
+                        <!-- <i class="fas fa-crown text-white text-lg"></i> -->
+                        <img src="/images/logo2.ico" alt="" class="rounded-full w-10 h-10">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-gray-800 leading-tight">Golden Crown</span>
+                    </div>
+                </a>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <div class="flex space-x-8">
+                        <a href="index.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Home</a>
+                        <a href="https://www.biblegateway.com" target="_blank"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">
+                            Bible
+                        </a>
+                        <a href="http://rccgonline.org" target="_blank"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">RCCG TV</a>
+
+                        <!-- Who are we Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="nav-link-hover text-gray-700 font-medium hover:text-amber-600 flex items-center focus:outline-none">
+                                About Us
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div
+                                class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                                <div class="py-2">
+                                    <a href="our-history.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        History</a>
+                                    <a href="our-mission&vision.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        Mission & Vision</a>
+                                    <a href="our-beliefs.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        Beliefs</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="programs.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Programs</a>
+                        <a href="donation.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Give</a>
+                    </div>
+                    <a href="contact.html" class="btn-rccg">Visit Us</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white py-4 border-t">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Home</a>
+                    <a href="https://www.biblegateway.com" target="_blank"
+                        class="text-gray-700 font-medium py-2 hover:text-amber-600">
+                        Bible
+                    </a>
+                    <a href="http://rccgonline.org" target="_blank"
+                        class="text-gray-700 font-medium py-2 hover:text-amber-600">RCCG
+                        TV</a>
+
+                    <!-- Mobile Dropdown Trigger -->
+                    <button id="mobile-dropdown-button"
+                        class="text-gray-700 font-medium py-2 hover:text-amber-600 flex items-center justify-between focus:outline-none">
+                        About Us
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+
+                    <!-- Mobile Dropdown Content -->
+                    <div id="mobile-dropdown-content" class="hidden pl-4 border-l-2 border-amber-100">
+                        <a href="our-history.html" class="block py-2 text-gray-600 hover:text-amber-600">Our History</a>
+                        <a href="our-mission&vision.html" class="block py-2 text-gray-600 hover:text-amber-600">Our
+                            Mission & Vision</a>
+                        <a href="our-beliefs.html" class="block py-2 text-gray-600 hover:text-amber-600">Our Beliefs</a>
+                    </div>
+
+                    <a href="programs.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Programs</a>
+                    <a href="donation.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Give</a>
+                    <a href="contact.html" class="btn-rccg text-center">Visit Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HISTORY HERO SECTION -->
+   <div class="relative bg-cover bg-center bg-fixed pt-16 md:pt-0"
+    style="background-image: url('https://www.rccg.org/wp-content/uploads/2020/07/PHOTO-2020-05-15-16-42-55.jpg');">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative z-10 flex items-center justify-center py-12 md:py-20 lg:min-h-screen">
+        <div class="w-full px-4 md:px-6 text-center text-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-8">
+                    <div
+                        class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                        <i class="fas fa-history text-amber-300"></i>
+                        <span class="font-medium">Our Journey Through Time</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight" data-aos="fade-up">
+                        Our History
+                    </h1>
+                    <p class="text-lg md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto" data-aos="fade-up"
+                        data-aos-delay="300">
+                        From Humble Beginnings to a Flourishing RCCG Zone: The Story of Golden Crown Church
+                    </p>
+                </div>
+
+                <div class="mt-8 md:mt-12" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#rccg-history" class="btn-secondary inline-block mr-4">
+                        RCCG History
+                    </a>
+                    <a href="#our-story" class="btn-primary inline-block">
+                        Our Story
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- RCCG HISTORY SECTION -->
+    <section id="rccg-history" class="py-16 md:py-20 bg-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-amber-600 mb-4 font-semibold tracking-wide">OUR ROOTS</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">The Redeemed Christian Church of God</h2>
+                <div class="flex justify-center mb-8">
+                    <div class="w-24 h-1 bg-gradient-to-r from-red-600 to-amber-600 rounded-full"></div>
+                </div>
+                <p class="text-gray-600 max-w-3xl mx-auto">A brief history of the global ministry we are privileged to
+                    be part of</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center mb-16">
+                <div class="lg:col-span-7" data-aos="fade-right">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Founding & Early Years</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            The Redeemed Christian Church of God (RCCG) was founded in 1952 by Reverend Josiah
+                            Akindayomi in Lagos, Nigeria. Reverend Akindayomi, who was illiterate but had a supernatural
+                            ability to read the Bible, received a vision from God to start a church that would spread
+                            throughout the world.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            The church started with just a few members meeting in a small house. Reverend Akindayomi
+                            prophesied that the church would grow to become a global ministry with branches all over the
+                            world. He led the church until his death in 1980.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Before his passing, Reverend Akindayomi received a divine revelation that his successor
+                            would be a young educated man named Enoch Adejare Adeboye, who had joined the church in
+                            1973. This prophecy was fulfilled, and Pastor E.A. Adeboye became the General Overseer in
+                            1981.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5" data-aos="fade-left" data-aos-delay="300">
+                    <div class="relative">
+                        <img src="data:image/jpeg;base64,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"
+                            alt="Rev. Josiah Akindayomi" class="rounded-2xl shadow-xl w-full h-96 object-cover">
+                        <div class="absolute -bottom-4 -right-4 bg-amber-600 text-white p-4 rounded-full shadow-xl">
+                            <i class="fas fa-church text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <h4 class="text-xl font-bold text-gray-800">Rev. Josiah Akindayomi</h4>
+                        <p class="text-amber-600">Founder of RCCG (1909-1980)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PASTOR ADEBOYE SECTION -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center mb-16">
+                <div class="lg:col-span-5" data-aos="zoom-in">
+                    <div class="relative">
+                        <img src="/images/daddy.png" alt="Pastor E.A. Adeboye" class="pastor-large-img">
+                        <div class="absolute -bottom-4 -right-4 bg-red-600 text-white p-4 rounded-full shadow-xl">
+                            <i class="fas fa-globe text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7" data-aos="fade-left" data-aos-delay="300">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Global Expansion Under Pastor E.A.
+                            Adeboye</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            When Pastor Enoch Adejare Adeboye assumed leadership in 1981, RCCG had about 40 parishes. A
+                            former mathematics professor, Pastor Adeboye brought organizational structure and strategic
+                            vision to the church while maintaining its spiritual foundation.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Under his leadership, RCCG has experienced exponential growth, expanding to over 198
+                            countries and territories with more than 40,000 parishes worldwide. The church's vision "To
+                            make heaven, to take as many people with us, and to have a member of RCCG in every family of
+                            all nations" has been the driving force behind this global expansion.
+                        </p>
+
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                            <div class="text-center p-4 bg-red-50 rounded-lg">
+                                <div class="milestone-number">40k+</div>
+                                <p class="text-gray-700 font-medium">Parishes Worldwide</p>
+                            </div>
+                            <div class="text-center p-4 bg-amber-50 rounded-lg">
+                                <div class="milestone-number">198</div>
+                                <p class="text-gray-700 font-medium">Countries</p>
+                            </div>
+                            <div class="text-center p-4 bg-blue-50 rounded-lg">
+                                <div class="milestone-number">40+</div>
+                                <p class="text-gray-700 font-medium">Years of Leadership</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                            <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                                <i class="fas fa-quote-left text-amber-600 mr-2"></i>
+                                Notable Quote
+                            </h4>
+                            <p class="text-gray-700 italic">
+                                "We are not just building a church; we are building people who will change their world
+                                for Christ."
+                            </p>
+                            <p class="text-amber-600 font-medium mt-2">— Pastor E.A. Adeboye</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RCCG KEY MILESTONES -->
+            <div class="bg-gradient-to-r from-red-50 to-amber-50 rounded-2xl p-6 md:p-8 mb-16" data-aos="fade-up">
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">RCCG Key Global Milestones
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full rccg-gradient flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">1952</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Church Founded</h4>
+                        <p class="text-gray-600 text-sm">RCCG established in Lagos, Nigeria by Rev. Josiah Akindayomi
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full rccg-gradient flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">1981</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">New Leadership</h4>
+                        <p class="text-gray-600 text-sm">Pastor E.A. Adeboye becomes General Overseer</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full rccg-gradient flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">1990</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Global Expansion</h4>
+                        <p class="text-gray-600 text-sm">First international parish established in London, UK</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full rccg-gradient flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">Today</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Worldwide Presence</h4>
+                        <p class="text-gray-600 text-sm">Over 40,000 parishes in 198 countries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOLDEN CROWN CHURCH HISTORY -->
+    <section id="our-story" class="py-16 md:py-20 bg-gradient-to-b from-blue-50 to-gray-50 w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-amber-600 mb-4 font-semibold tracking-wide">OUR LOCAL STORY</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Golden Crown Church History</h2>
+                <div class="flex justify-center mb-8">
+                    <div class="w-24 h-1 bg-gradient-to-r from-amber-600 to-blue-600 rounded-full"></div>
+                </div>
+                <p class="text-gray-600 max-w-3xl mx-auto">How God planted and grew our specific RCCG zone</p>
+            </div>
+
+            <!-- EDITABLE CHURCH HISTORY SECTION -->
+            <div class="max-w-4xl mx-auto mb-16" data-aos="fade-up">
+                <div class="history-card">
+                    <div class="history-icon gold-gradient">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Foundation Story</h3>
+                    <div class="prose max-w-none">
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            <!-- EDIT THIS SECTION WITH YOUR CHURCH'S ACTUAL HISTORY -->
+                            Golden Crown Church was established in [YEAR] as a vision given by God to [FOUNDER'S NAME].
+                            Starting as a small house fellowship with just [NUMBER] members, our church began in
+                            [LOCATION] with a simple mission: to spread the gospel of Jesus Christ and transform our
+                            community through God's love.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            The early days were characterized by [DESCRIBE EARLY CHALLENGES AND BLESSINGS]. Despite
+                            limited resources, God's faithfulness was evident as we witnessed miraculous growth and
+                            transformation in the lives of our members. Our first permanent worship center was
+                            established in [YEAR] at [LOCATION], marking a significant milestone in our journey.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Over the years, Golden Crown Church has been blessed with dedicated leaders and members who
+                            have served faithfully. We've experienced seasons of [DESCRIBE KEY SEASONS OR EVENTS] that
+                            have shaped our identity and strengthened our faith. Through it all, God has remained
+                            faithful, expanding our reach and impact in our community.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            In [YEAR], we were officially recognized as an RCCG Zone, a testament to God's grace and the
+                            diligent work of our members. This elevation has enabled us to plant new parishes, develop
+                            more leaders, and extend our ministry impact across our region.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HISTORICAL TIMELINE -->
+            <div class="mb-16">
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">Our Journey Through the Years
+                </h3>
+                <div class="history-timeline">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">[YEAR]</div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">Church Founding</h4>
+                            <p class="text-gray-600">
+                                Golden Crown Church was founded with [NUMBER] members meeting in [LOCATION/TYPE OF
+                                SPACE].
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">[YEAR]</div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">First Building</h4>
+                            <p class="text-gray-600">
+                                Moved to our first dedicated worship space at [LOCATION], accommodating [NUMBER] people.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">[YEAR]</div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">Community Outreach</h4>
+                            <p class="text-gray-600">
+                                Launched our first major community program: [PROGRAM NAME], impacting [NUMBER] families.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">[YEAR]</div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">RCCG Zone Status</h4>
+                            <p class="text-gray-600">
+                                Officially recognized as an RCCG Zone, beginning oversight of [NUMBER] parishes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">[YEAR]</div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">Current Auditorium</h4>
+                            <p class="text-gray-600">
+                                Dedicated our current worship center accommodating [NUMBER] worshippers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRENT PASTOR SECTION - PASTOR ATOMEJI VIAVO -->
+    <section class="py-16 md:py-20 bg-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-amber-600 mb-4 font-semibold tracking-wide">CONTINUING THE LEGACY</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Current Pastor: Pastor Atomeji Viavo
+                </h2>
+                <div class="flex justify-center mb-8">
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-amber-600 rounded-full"></div>
+                </div>
+                <p class="text-gray-600 max-w-3xl mx-auto">Leading Golden Crown Church into a new era of growth and
+                    impact</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center mb-16">
+                <div class="lg:col-span-5" data-aos="zoom-in">
+                    <div class="relative">
+                        <!-- PASTOR ATOMEJI VIAVO'S IMAGE - REPLACE WITH ACTUAL PHOTO -->
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&auto=format&fit=crop&q=80"
+                            alt="Pastor Atomeji Viavo" class="pastor-large-img">
+                        <div class="absolute -bottom-4 -right-4 bg-blue-600 text-white p-4 rounded-full shadow-xl">
+                            <i class="fas fa-hands-praying text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7" data-aos="fade-left" data-aos-delay="300">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">A Season of Accelerated Growth
+                        </h3>
+
+                        <div class="mb-8">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-user-plus text-amber-600 mr-3"></i>
+                                Joining Golden Crown Church
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Pastor Atomeji Viavo joined Golden Crown Church in [YEAR SHE JOINED], bringing with her
+                                [NUMBER] years of ministry experience and a fresh vision for kingdom expansion. Her
+                                arrival marked the beginning of a new season characterized by [DESCRIBE HER INITIAL
+                                IMPACT].
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                Before joining our church, Pastor Viavo served faithfully in [PREVIOUS MINISTRY
+                                ROLES/LOCATIONS], where she demonstrated exceptional leadership in [SPECIFIC AREAS OF
+                                MINISTRY]. Her theological training at [SCHOOL/INSTITUTION] and deep commitment to
+                                prayer have been foundational to her ministry approach.
+                            </p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-chart-line text-green-600 mr-3"></i>
+                                Tremendous Growth Under Her Leadership
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Since Pastor Viavo assumed leadership of Golden Crown Church, we have witnessed
+                                remarkable growth in multiple areas:
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Membership increased by [PERCENTAGE/NUMBER]%</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">[NUMBER] new ministries launched</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">[NUMBER] parishes planted under our zone</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Community impact expanded to [NUMBER] programs</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Her emphasis on [HER KEY EMPHASES - e.g., prayer, discipleship, community outreach] has
+                                created a culture of [DESCRIBE CHURCH CULTURE] that continues to attract people from all
+                                walks of life.
+                            </p>
+                        </div>
+
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                                <i class="fas fa-star text-blue-600 mr-2"></i>
+                                Vision for the Future
+                            </h4>
+                            <p class="text-gray-700 mb-3">
+                                Pastor Viavo's vision for Golden Crown Church includes:
+                            </p>
+                            <ul class="text-gray-700 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2 text-sm"></i>
+                                    <span>Establishing a Bible training center for leadership development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2 text-sm"></i>
+                                    <span>Expanding our community development initiatives</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2 text-sm"></i>
+                                    <span>Planting [NUMBER] new parishes in the next [NUMBER] years</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-arrow-right text-blue-600 mt-1 mr-2 text-sm"></i>
+                                    <span>Developing a media ministry to reach the digital generation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GROWTH STATISTICS -->
+            <div class="bg-gradient-to-r from-amber-50 to-blue-50 rounded-2xl p-6 md:p-8 mb-16" data-aos="fade-up">
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">Growth Under Pastor Viavo's
+                    Leadership</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="counter text-5xl font-bold text-amber-600 mb-2">[XXX]%</div>
+                        <div class="w-16 h-1 bg-amber-600 mx-auto mb-4"></div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Membership Growth</h4>
+                        <p class="text-gray-600 text-sm">Increase since Pastor Viavo joined</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="counter text-5xl font-bold text-blue-600 mb-2">[XX]</div>
+                        <div class="w-16 h-1 bg-blue-600 mx-auto mb-4"></div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">New Ministries</h4>
+                        <p class="text-gray-600 text-sm">Launched under her leadership</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="counter text-5xl font-bold text-green-600 mb-2">[X]</div>
+                        <div class="w-16 h-1 bg-green-600 mx-auto mb-4"></div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Parishes Planted</h4>
+                        <p class="text-gray-600 text-sm">As part of our zone expansion</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="counter text-5xl font-bold text-red-600 mb-2">[XXXX]</div>
+                        <div class="w-16 h-1 bg-red-600 mx-auto mb-4"></div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Lives Impacted</h4>
+                        <p class="text-gray-600 text-sm">Through community programs</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PASTOR'S QUOTE -->
+            <div class="max-w-4xl mx-auto" data-aos="zoom-in">
+                <div class="history-quote">
+                    <i class="fas fa-quote-left text-white text-4xl mb-6"></i>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-center">"Our greatest calling is not just to
+                        build a church, but to build people who will transform their world for Christ. At Golden Crown
+                        Church, we are committed to raising disciples who live out their faith in practical ways,
+                        bringing hope and healing to our community."</h3>
+                    <div class="flex items-center justify-center mt-8">
+                        <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg">Pastor Atomeji Viavo</p>
+                            <p class="text-amber-200">Senior Pastor, Golden Crown Church (RCCG Zone)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTINUING THE LEGACY -->
+    <section class="py-16 md:py-20 bg-gradient-to-r from-slate-900 to-slate-800 w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center text-white mb-12">
+                <h6 class="text-lg text-amber-300 mb-4 font-semibold tracking-wide">THE STORY CONTINUES</h6>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Become Part of Our History</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-8">
+                    Our history is still being written. Join us as we continue to write new chapters of faith, hope, and
+                    transformation.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                    <div class="text-center" data-aos="fade-up">
+                        <div class="w-16 h-16 rounded-full bg-amber-600 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Join Our Family</h4>
+                        <p class="text-gray-300">
+                            Become a member and be part of our growing church family.
+                        </p>
+                    </div>
+
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hand-holding-heart text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Serve With Us</h4>
+                        <p class="text-gray-300">
+                            Use your gifts and talents to serve in one of our ministries.
+                        </p>
+                    </div>
+
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-16 h-16 rounded-full bg-green-600 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-dove text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3">Share Your Story</h4>
+                        <p class="text-gray-300">
+                            Your testimony can inspire others and become part of our history.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <a href="index.html#contact" class="btn-secondary inline-block mr-4">
+                        Visit Us This Sunday
+                    </a>
+                    <a href="index.html#donation" class="btn-primary inline-block">
+                        Support Our Legacy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER - Matching Homepage -->
+    <footer class="bg-slate-900 text-gray-300 w-full">
+        <div class="w-full px-4 md:px-6 mx-auto py-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Column 1: Brand (Spans 4 columns) -->
+                <div class="md:col-span-4 lg:col-span-4">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-8 h-8 rccg-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                            <img src="/images/logo2.ico" alt="RCCG Logo" class="w-8 h-8 object-contain rounded-full">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-bold text-white leading-tight">Golden Crown</span>
+
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed text-base mb-6 space-y-2">
+                        A vibrant parish of the Redeemed Christian Church of God committed to making heaven, taking as
+                        many people with us, and having a member of RCCG in every family of all nations.
+                    </p>
+                    <div class="flex space-x-5">
+                        <a href="https://facebook.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <!--EXTRA SPACE-->
+                <div class="md:col-span-1 lg:col-span-1">
+
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <h6 class="text-xl font-bold text-white mb-5">QUICK LINKS</h6>
+                    <div class="space-y-3">
+                        <a href="index.html" class="block hover:text-amber-400 transition text-base">Home</a>
+                        <a href="http://rccgonline.org" target="_blank"
+                            class="block hover:text-amber-400 transition text-base">RCCG TV</a>
+                        <a href="programs.html" class="block hover:text-amber-400 transition text-base">Programs</a>
+                        <a href="donation.html" class="block hover:text-amber-400 transition text-base">Give</a>
+                        <a href="contact.html" class="block hover:text-amber-400 transition text-base">Visit
+                            Us</a>
+                    </div>
+                </div>
+
+                <!-- Column 3: About -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <h6 class="text-xl font-bold text-white mb-5">ABOUT US</h6>
+                    <div class="space-y-3">
+                        <a href="our-mission&vision.html"
+                            class="block hover:text-amber-400 transition text-base">Mission & Vision</a>
+                        <a href="our-history.html" class="block hover:text-amber-400 transition text-base">Our
+                            History</a>
+                        <a href="our-beliefs.html" class="block hover:text-amber-400 transition text-base">Our
+                            Beliefs</a>
+                        <a href="http://rccgonline.org" class="block hover:text-amber-400 transition text-base">RCCG
+                            TV</a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="md:col-span-3 lg:col-span-3">
+                    <h6 class="text-xl font-bold text-white mb-5">CONTACT US</h6>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="text-gray-300 text-base">Golden Crown Church</p>
+                                <p class="text-gray-400 text-sm mt-1">RCCG Zone, Lagos</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="text-gray-300 text-base">+234 814 007 4633</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <a href="mailto:info@goldencrownrccg.org"
+                                    class="text-gray-300 hover:text-amber-400 text-base block">
+                                    info@goldencrownrccg.org
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Updates -->
+                    <div class="mt-6">
+                        <p class="text-gray-300 mb-3 text-base">Stay Updated</p>
+                        <div class="flex flex-col gap-3">
+                            <input type="email" placeholder="Your email address"
+                                class="w-full px-4 py-3 bg-slate-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-base">
+                            <button class="btn-secondary px-5 py-3 rounded-lg text-base font-medium w-full">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-slate-800 mt-10 pt-8 text-center">
+                <p class="text-base text-gray-400 mb-2">© 2025 Golden Crown Church (RCCG Zone). All Rights Reserved.</p>
+                <p class="text-sm text-gray-500">Part of The Redeemed Christian Church of God Worldwide</p>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = document.getElementById('mobile-menu-button');
+            if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+
+        // Mobile dropdown toggle
+        document.getElementById('mobile-dropdown-button').addEventListener('click', function () {
+            const dropdownContent = document.getElementById('mobile-dropdown-content');
+            const icon = this.querySelector('i');
+
+            dropdownContent.classList.toggle('hidden');
+
+            if (dropdownContent.classList.contains('hidden')) {
+                icon.className = 'fas fa-chevron-down text-xs';
+            } else {
+                icon.className = 'fas fa-chevron-up text-xs';
+            }
+        });
+
+        // Close mobile dropdown when clicking elsewhere
+        document.addEventListener('click', function (event) {
+            const dropdownButton = document.getElementById('mobile-dropdown-button');
+            const dropdownContent = document.getElementById('mobile-dropdown-content');
+            const icon = dropdownButton.querySelector('i');
+
+            if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+                if (!dropdownContent.classList.contains('hidden')) {
+                    dropdownContent.classList.add('hidden');
+                    icon.className = 'fas fa-chevron-down text-xs';
+                }
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Prevent horizontal scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.style.overflowX = 'hidden';
+            document.documentElement.style.overflowX = 'hidden';
+        });
+
+        // Fix for iOS viewport
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+
+        // Timeline Animation on Scroll
+        function animateTimeline() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        // Animated Counter
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200; // The lower the slower
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText.replace('+', '');
+
+                    // Check if target is reached
+                    if (count < target) {
+                        // Add inc to count and output in counter
+                        counter.innerText = Math.ceil(count + target / speed) + '+';
+                        // Call function every ms
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target + '+';
+                    }
+                };
+
+                // Set initial data-target if not set
+                if (!counter.hasAttribute('data-target')) {
+                    const text = counter.innerText;
+                    const number = text.replace('+', '').replace('[', '').replace(']', '');
+                    if (!isNaN(number)) {
+                        counter.setAttribute('data-target', number);
+                        counter.innerText = '0';
+                    }
+                }
+
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        updateCount();
+                        observer.unobserve(counter);
+                    }
+                }, { threshold: 0.5 });
+
+                observer.observe(counter);
+            });
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function () {
+            animateTimeline();
+            animateCounters();
+        });
+    </script>
+</body>
+
+</html>

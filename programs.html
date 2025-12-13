@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Golden Crown Church (RCCG) Programs - Weekly Services, Conventions, Holy Ghost Services & Congress">
+    <title>Programs - Golden Crown Church RCCG</title>
+    <link rel="shortcut icon" href="/images/logo2.ico" type="image/x-icon">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS (Animate on Scroll) CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Custom Styles - Consistent with homepage */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+        }
+
+        .blue-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+
+        .rccg-gradient {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+        }
+
+        .nav-link-hover:hover {
+            color: #d97706 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(217, 119, 6, 0.3);
+        }
+
+        .btn-rccg {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-rccg:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(204, 0, 0, 0.3);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .program-card {
+            border-radius: 1rem;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .countdown-box {
+            background: linear-gradient(135deg, rgba(204, 0, 0, 0.9), rgba(153, 0, 0, 0.9));
+            border-radius: 1rem;
+            padding: 1.5rem;
+            color: white;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1;
+           
+        }
+
+        .countdown-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-top: 0.25rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #CC0000;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #CC0000;
+        }
+
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background: #e5e7eb;
+        }
+
+        .timeline-item:last-child:after {
+            display: none;
+        }
+
+        .mega-event-card {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .mega-event-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+        }
+
+        /* RCCG Colors */
+        .text-rccg-red {
+            color: #CC0000;
+        }
+
+        .bg-rccg-red {
+            background-color: #CC0000;
+        }
+
+        .border-rccg-red {
+            border-color: #CC0000;
+        }
+
+        .bg-rccg-light {
+            background-color: #fff5f5;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            .program-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .countdown-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
+
+        /* Ensure all sections are full width */
+        section,
+        .section {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* Fix container padding */
+        .px-safe {
+            padding-left: max(1rem, env(safe-area-inset-left));
+            padding-right: max(1rem, env(safe-area-inset-right));
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-white shadow-lg">
+        <div class="w-full px-4 md:px-6">
+            <div class="flex justify-between items-center py-2">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold">
+                    <div class="w-10 h-10 rccg-gradient rounded-full flex items-center justify-center">
+                        <img src="/images/logo2.ico" alt="Golden Crown Church Logo" class="rounded-full w-10 h-10">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-gray-800 leading-tight">Golden Crown</span>
+                    </div>
+                </a>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <div class="flex space-x-8">
+                        <a href="index.html" class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Home</a>
+                        <a href="https://www.biblegateway.com" target="_blank" class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">
+                            Bible
+                        </a>
+                        <a href="http://rccgonline.org" target="_blank" class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">RCCG TV</a>
+
+                        <!-- About Us Dropdown -->
+                        <div class="relative group">
+                            <button class="nav-link-hover text-gray-700 font-medium hover:text-amber-600 flex items-center focus:outline-none">
+                                About Us
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                                <div class="py-2">
+                                    <a href="our-history.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our History</a>
+                                    <a href="our-mission&vision.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our Mission & Vision</a>
+                                    <a href="our-beliefs.html" class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our Beliefs</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="programs.html" class="nav-link-hover text-gray-700 font-medium hover:text-amber-600 text-amber-600 font-semibold">Programs</a>
+                        <a href="donation.html" class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Give</a>
+                    </div>
+                    <a href="contact.html" class="btn-rccg">Visit Us</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white py-4 border-t">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Home</a>
+                    <a href="https://www.biblegateway.com" target="_blank" class="text-gray-700 font-medium py-2 hover:text-amber-600">
+                        Bible
+                    </a>
+                    <a href="http://rccgonline.org" target="_blank" class="text-gray-700 font-medium py-2 hover:text-amber-600">RCCG TV</a>
+
+                    <!-- Mobile Dropdown Trigger -->
+                    <button id="mobile-dropdown-button" class="text-gray-700 font-medium py-2 hover:text-amber-600 flex items-center justify-between focus:outline-none">
+                        About Us
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+
+                    <!-- Mobile Dropdown Content -->
+                    <div id="mobile-dropdown-content" class="hidden pl-4 border-l-2 border-amber-100">
+                        <a href="our-history.html" class="block py-2 text-gray-600 hover:text-amber-600">Our History</a>
+                        <a href="our-mission&vision.html" class="block py-2 text-gray-600 hover:text-amber-600">Our Mission & Vision</a>
+                        <a href="our-beliefs.html" class="block py-2 text-gray-600 hover:text-amber-600">Our Beliefs</a>
+                    </div>
+
+                    <a href="programs.html" class="text-amber-600 font-medium py-2 font-semibold">Programs</a>
+                    <a href="donation.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Give</a>
+                    <a href="contact.html" class="btn-rccg text-center">Visit Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="relative min-h-[50vh] bg-cover bg-center pt-20"
+        style="background-image: url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2h1cmNofGVufDB8fDB8fHww');">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/60"></div>
+        <div class="relative z-10 min-h-[50vh] flex items-center">
+            <div class="w-full px-4 md:px-6 py-16">
+                <div class="max-w-6xl mx-auto">
+                    <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                        <i class="fas fa-calendar-alt text-amber-300"></i>
+                        <span class="font-medium text-white">RCCG PROGRAMS & EVENTS</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white" data-aos="fade-up">
+                        Church Programs & Events
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl" data-aos="fade-up" data-aos-delay="300">
+                        Discover all programs, services, and events at Golden Crown Church (RCCG Zone)
+                    </p>
+                    <div class="mt-8" data-aos="fade-up" data-aos-delay="600">
+                        <a href="#weekly" class="btn-secondary inline-block mr-4">
+                            <i class="fas fa-church mr-2"></i>Weekly Services
+                        </a>
+                        <a href="https://rccgworld.org/rccg/" class="btn-primary inline-block">
+                            <i class="fas fa-star mr-2"></i>Mega Events
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WEEKLY SERVICES -->
+    <section id="weekly" class="py-16 md:py-20 bg-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-rccg-red mb-4 font-semibold tracking-wide">REGULAR PROGRAMS</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Weekly Services & Programs</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Join us for our regular weekly services designed for spiritual growth and fellowship</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Sunday Service -->
+                <div class="program-card bg-white shadow-lg card-hover" data-aos="fade-up">
+                    <div class="p-6 flex-1">
+                        <div class="program-icon rccg-gradient">
+                            <i class="fas fa-church text-white text-2xl"></i>
+                        </div>
+                        <h5 class="text-xl font-bold text-gray-800 mb-4">Sunday Service</h5>
+                        <p class="text-gray-600 mb-6">Our main worship service featuring powerful praise & worship, dynamic teaching, and altar ministration.</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-clock text-amber-600 mr-2"></i>
+                                <span class="font-medium">Time:</span>
+                                <span class="ml-2">8:30 AM - 11:30 AM</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-users text-amber-600 mr-2"></i>
+                                <span class="font-medium">For:</span>
+                                <span class="ml-2">All Ages</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-microphone text-amber-600 mr-2"></i>
+                                <span class="font-medium">Format:</span>
+                                <span class="ml-2">In-person & Online</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://rccgworld.org/rccg/" class="btn-rccg w-full text-center">Join Service</a>
+                    </div>
+                </div>
+
+                <!-- Tuesday Bible Study -->
+                <div class="program-card bg-white shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6 flex-1">
+                        <div class="program-icon blue-gradient">
+                            <i class="fas fa-book-bible text-white text-2xl"></i>
+                        </div>
+                        <h5 class="text-xl font-bold text-gray-800 mb-4">Tuesday Bible Study</h5>
+                        <p class="text-gray-600 mb-6">Deep, practical study of God's Word with applications for daily living and spiritual growth.</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-clock text-blue-600 mr-2"></i>
+                                <span class="font-medium">Time:</span>
+                                <span class="ml-2">5:00 PM - 6:00 PM</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-book-open text-blue-600 mr-2"></i>
+                                <span class="font-medium">Focus:</span>
+                                <span class="ml-2">Doctrine & Teaching</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-user-friends text-blue-600 mr-2"></i>
+                                <span class="font-medium">Group:</span>
+                                <span class="ml-2">Small Groups</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://rccgworld.org/rccg/" class="btn-primary w-full text-center">Join Study</a>
+                    </div>
+                </div>
+
+                <!-- Thursday Faith Clinic -->
+                <div class="program-card bg-white shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6 flex-1">
+                        <div class="program-icon gold-gradient">
+                            <i class="fas fa-pray text-white text-2xl"></i>
+                        </div>
+                        <h5 class="text-xl font-bold text-gray-800 mb-4">Thursday Faith Clinic</h5>
+                        <p class="text-gray-600 mb-6">Powerful prayer session for miracles, breakthroughs, healing, and divine intervention.</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-clock text-amber-600 mr-2"></i>
+                                <span class="font-medium">Time:</span>
+                                <span class="ml-2">5:00 PM - 6:00 PM</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-hands-praying text-amber-600 mr-2"></i>
+                                <span class="font-medium">Focus:</span>
+                                <span class="ml-2">Prayer & Intercession</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-heart text-amber-600 mr-2"></i>
+                                <span class="font-medium">Atmosphere:</span>
+                                <span class="ml-2">Miraculous</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://rccgworld.org/rccg/" class="btn-secondary w-full text-center">Join Prayer</a>
+                    </div>
+                </div>
+
+                <!-- House Fellowship -->
+                <div class="program-card bg-white shadow-lg card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-6 flex-1">
+                        <div class="program-icon rccg-gradient">
+                            <i class="fas fa-home text-white text-2xl"></i>
+                        </div>
+                        <h5 class="text-xl font-bold text-gray-800 mb-4">House Fellowship</h5>
+                        <p class="text-gray-600 mb-6">Weekly small group meetings in homes for deeper fellowship, Bible study, and prayer.</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-calendar text-rccg-red mr-2"></i>
+                                <span class="font-medium">Day:</span>
+                                <span class="ml-2">Various Weekdays</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-map-marker-alt text-rccg-red mr-2"></i>
+                                <span class="font-medium">Location:</span>
+                                <span class="ml-2">Various Homes</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-user-group text-rccg-red mr-2"></i>
+                                <span class="font-medium">Size:</span>
+                                <span class="ml-2">10-20 People</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="btn-rccg w-full text-center">Join a Cell</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEGA EVENTS SECTION -->
+    <section id="mega-events" class="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-rccg-red mb-4 font-semibold tracking-wide">RCCG MEGA EVENTS</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Annual Conventions & Congress</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Experience life-changing encounters at our annual RCCG mega events</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Holy Ghost Service Countdown -->
+                <div class="lg:col-span-1" data-aos="fade-right">
+                    <div class="bg-white rounded-2xl shadow-xl p-8 h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Next Holy Ghost Service</h3>
+                        <div class="mb-8">
+                            <p class="text-gray-600 mb-4">First Friday of every month • 7:00 PM</p>
+                            <p class="text-gray-600">A powerful night of miracles, signs, and wonders with thousands of believers worldwide.</p>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Countdown to Next Service</h4>
+                            <div class="grid grid-cols-4 gap-3">
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="days">00</div>
+                                    <div class="countdown-label">Days</div>
+                                </div>
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="hours">00</div>
+                                    <div class="countdown-label">Hrs</div>
+                                </div>
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="minutes">00</div>
+                                    <div class="countdown-label">Mins</div>
+                                </div>
+                                <div class="countdown-box">
+                                    <div class="countdown-number" id="seconds">00</div>
+                                    <div class="countdown-label">Secs</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn-rccg w-full text-center">
+                            <i class="fas fa-calendar-plus mr-2"></i>Add to Calendar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Conventions & Congress -->
+                <div class="lg:col-span-2" data-aos="fade-left">
+                    <div class="space-y-8">
+                        <!-- Annual Convention -->
+                        <div class="mega-event-card bg-white rounded-2xl shadow-xl overflow-hidden">
+                            <div class="md:flex">
+                                <div class="md:w-2/5">
+                                    <img src="/images/convention.jpg" 
+                                         alt="RCCG Convention" class="w-full h-64 md:h-full object-cover">
+                                </div>
+                                <div class="md:w-3/5 p-8">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 rccg-gradient rounded-full flex items-center justify-center mr-4">
+                                            <i class="fas fa-users text-white text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-bold text-gray-800">RCCG Annual Convention</h4>
+                                            <p class="text-rccg-red font-semibold">August 1-7, 2026</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 mb-6">The largest gathering of RCCG members worldwide featuring seven days of powerful teachings, ministrations, and fellowship at the Redemption Camp.</p>
+                                    <div class="flex flex-wrap gap-3 mb-6">
+                                        <span class="px-3 py-1 bg-red-50 text-rccg-red rounded-full text-sm">Theme: "Greater Works"</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">Live Streaming</span>
+                                        <span class="px-3 py-1 bg-amber-50 text-amber-600 rounded-full text-sm">Global Participation</span>
+                                    </div>
+                                    <a href="#" class="btn-rccg">
+                                        <i class="fas fa-info-circle mr-2"></i>Convention Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Holy Ghost Congress -->
+                        <div class="mega-event-card bg-white rounded-2xl shadow-xl overflow-hidden">
+                            <div class="md:flex">
+                                <div class="md:w-2/5">
+                                    <img src="https://www.rccg.org/wp-content/uploads/2025/11/banner-1536x614.jpg" 
+                                         alt="Holy Ghost Congress" class="w-full h-80 md:h-96 object-contain bg-gray-100">
+                                </div>
+                                <div class="md:w-3/5 p-8">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-12 h-12 gold-gradient rounded-full flex items-center justify-center mr-4">
+                                            <i class="fas fa-dove text-white text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-bold text-gray-800">Holy Ghost Congress</h4>
+                                            <p class="text-amber-600 font-semibold">December 8-14th, 2025</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 mb-6">A week-long spiritual feast with focus on the Holy Spirit's power, featuring nightly ministrations, healing services, and prophetic declarations.</p>
+                                    <div class="flex flex-wrap gap-3 mb-6">
+                                        <span class="px-3 py-1 bg-red-50 text-rccg-red rounded-full text-sm">Theme: "Divine Visitation"</span>
+                                        <span class="px-3 py-1 bg-purple-50 text-purple-600 rounded-full text-sm">Miracles & Healing</span>
+                                        <span class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-sm">All Night Vigils</span>
+                                    </div>
+                                    <a href="#" class="btn-secondary">
+                                        <i class="fas fa-star mr-2"></i>Congress Info
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Mega Events -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8" data-aos="fade-up">
+                <!-- Easter Retreat -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="rccg-gradient p-6 text-white">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-cross text-2xl mr-3"></i>
+                            <h5 class="text-xl font-bold">Easter Retreat</h5>
+                        </div>
+                        <p class="text-amber-100">Celebrating Christ's Resurrection</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">A 3-day spiritual retreat during Easter weekend focusing on the power of resurrection.</p>
+                        <div class="text-sm text-gray-500 mb-6">
+                            <p><i class="fas fa-calendar-alt mr-2"></i> April 17-19, 2026</p>
+                            <p><i class="fas fa-clock mr-2"></i> 9 AM - 4 PM Daily</p>
+                        </div>
+                        <a href="#" class="btn-primary w-full text-center">Retreat Details</a>
+                    </div>
+                </div>
+
+                <!-- December Thanksgiving -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="gold-gradient p-6 text-white">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-hands-praying text-2xl mr-3"></i>
+                            <h5 class="text-xl font-bold">Thanksgiving Service</h5>
+                        </div>
+                        <p class="text-amber-100">Annual Thanksgiving & Testimony Service</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">A special service dedicated to giving thanks to God for His faithfulness throughout the year.</p>
+                        <div class="text-sm text-gray-500 mb-6">
+                            <p><i class="fas fa-calendar-alt mr-2"></i> December 25, 2025</p>
+                            <p><i class="fas fa-clock mr-2"></i> 10 AM - 1 PM</p>
+                        </div>
+                        <a href="#" class="btn-secondary w-full text-center">Service Info</a>
+                    </div>
+                </div>
+
+                <!-- Ministers Conference -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="blue-gradient p-6 text-white">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user-tie text-2xl mr-3"></i>
+                            <h5 class="text-xl font-bold">Ministers Conference</h5>
+                        </div>
+                        <p class="text-blue-100">Equipping Church Leaders</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Annual conference for pastors, ministers, and church workers for training and refreshment.</p>
+                        <div class="text-sm text-gray-500 mb-6">
+                            <p><i class="fas fa-calendar-alt mr-2"></i> July 15-17, 2026</p>
+                            <p><i class="fas fa-clock mr-2"></i> 8 AM - 5 PM Daily</p>
+                        </div>
+                        <a href="#" class="btn-primary w-full text-center">Conference Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIALIZED MINISTRIES -->
+    <section class="py-16 md:py-20 bg-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-rccg-red mb-4 font-semibold tracking-wide">SPECIALIZED MINISTRIES</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Programs for Every Demography</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Tailored programs and ministries for different age groups and life stages</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Children's Church -->
+                <div class="text-center p-6" data-aos="zoom-in">
+                    <div class="w-20 h-20 rccg-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-child text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Children's Church</h4>
+                    <p class="text-gray-600 mb-4">Age-appropriate Bible teaching, songs, and activities for children (0-12 years).</p>
+                    <p class="text-sm text-gray-500 mb-6">Sundays • 8:30 AM - 11:30 AM</p>
+                    <a href="#" class="text-rccg-red font-semibold hover:text-red-800 inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Teens & Youth -->
+                <div class="text-center p-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-20 h-20 blue-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Teens & Youth</h4>
+                    <p class="text-gray-600 mb-4">Dynamic programs for teenagers and young adults (13-35 years).</p>
+                    <p class="text-sm text-gray-500 mb-6">Fridays • 5:00 PM - 7:00 PM</p>
+                    <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 inline-flex items-center">
+                        Youth Portal <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Women's Ministry -->
+                <div class="text-center p-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-20 h-20 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-female text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Women's Ministry</h4>
+                    <p class="text-gray-600 mb-4">Monthly meetings, prayer sessions, and conferences for women.</p>
+                    <p class="text-sm text-gray-500 mb-6">Last Saturday • 10:00 AM - 12:00 PM</p>
+                    <a href="#" class="text-amber-600 font-semibold hover:text-amber-800 inline-flex items-center">
+                        Women's Events <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Men's Fellowship -->
+                <div class="text-center p-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-20 h-20 rccg-gradient rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-male text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Men's Fellowship</h4>
+                    <p class="text-gray-600 mb-4">Monthly meetings for men focusing on spiritual growth and leadership.</p>
+                    <p class="text-sm text-gray-500 mb-6">First Saturday • 8:00 AM - 10:00 AM</p>
+                    <a href="#" class="text-rccg-red font-semibold hover:text-red-800 inline-flex items-center">
+                        Men's Events <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Upcoming Events Timeline -->
+            <div class="mt-20" data-aos="fade-up">
+                <div class="bg-gradient-to-r from-amber-50 to-red-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Upcoming Events Timeline</h3>
+                    
+                    <div class="max-w-4xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-6">January - June 2026</h4>
+                                <div class="timeline-item">
+                                    <h5 class="font-bold text-gray-800 mb-2">January 31</h5>
+                                    <p class="text-gray-600">Monthly Holy Ghost Service</p>
+                                    <p class="text-sm text-gray-500">7:00 PM - Church Auditorium</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5 class="font-bold text-gray-800 mb-2">March 28-30</h5>
+                                    <p class="text-gray-600">Easter Retreat</p>
+                                    <p class="text-sm text-gray-500">3-day spiritual retreat</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5 class="font-bold text-gray-800 mb-2">May 30</h5>
+                                    <p class="text-gray-600">Children's Day Special Service</p>
+                                    <p class="text-sm text-gray-500">10:00 AM - Children's Church</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-6">July - December 2026</h4>
+                                <div class="timeline-item">
+                                    <h5 class="font-bold text-gray-800 mb-2">August 1-7</h5>
+                                    <p class="text-gray-600">RCCG Annual Convention</p>
+                                    <p class="text-sm text-gray-500">Redemption Camp</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5 class="font-bold text-gray-800 mb-2">October 31</h5>
+                                    <p class="text-gray-600">Harvest Thanksgiving Service</p>
+                                    <p class="text-sm text-gray-500">Special offerings & testimonies</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5 class="font-bold text-gray-800 mb-2">December 5-11</h5>
+                                    <p class="text-gray-600">Holy Ghost Congress</p>
+                                    <p class="text-sm text-gray-500">Redemption Camp</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTRATION CTA -->
+    <section class="py-16 md:py-20 bg-gradient-to-r from-slate-900 to-slate-800 w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+                <div class="inline-flex items-center justify-center w-20 h-20 rccg-gradient rounded-full mb-8">
+                    <i class="fas fa-calendar-check text-white text-3xl"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Register for Upcoming Events</h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Secure your spot for our upcoming conventions, retreats, and special programs. Early registration comes with benefits!</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-edit mr-2"></i>Register for Convention
+                    </a>
+                    <a href="#" class="btn-primary">
+                        <i class="fas fa-download mr-2"></i>Download Program Schedule
+                    </a>
+                    <a href="contact.html" class="btn-rccg">
+                        <i class="fas fa-question-circle mr-2"></i>Ask Questions
+                    </a>
+                </div>
+                
+                <p class="text-gray-400 mt-8 text-sm">Need assistance with registration? Call +234 814 007 4633 or email events@goldencrownrccg.org</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-gray-300 w-full">
+        <div class="w-full px-4 md:px-6 mx-auto py-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Column 1: Brand (Spans 4 columns) -->
+                <div class="md:col-span-4 lg:col-span-4">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-8 h-8 rccg-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                            <img src="/images/logo2.ico" alt="RCCG Logo" class="w-8 h-8 object-contain rounded-full">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-bold text-white leading-tight">Golden Crown</span>
+
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed text-base mb-6 space-y-2">
+                        A vibrant parish of the Redeemed Christian Church of God committed to making heaven, taking as
+                        many people with us, and having a member of RCCG in every family of all nations.
+                    </p>
+                    <div class="flex space-x-5">
+                        <a href="https://facebook.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <!--EXTRA SPACE-->
+                <div class="md:col-span-1 lg:col-span-1">
+
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <h6 class="text-xl font-bold text-white mb-5">QUICK LINKS</h6>
+                    <div class="space-y-3">
+                        <a href="index.html" class="block hover:text-amber-400 transition text-base">Home</a>
+                        <a href="http://rccgonline.org" target="_blank"
+                            class="block hover:text-amber-400 transition text-base">RCCG TV</a>
+                        <a href="programs.html"
+                            class="block hover:text-amber-400 transition text-base">Programs</a>
+                        <a href="donation.html" class="block hover:text-amber-400 transition text-base">Give</a>
+                        <a href="contact.html" class="block hover:text-amber-400 transition text-base">Visit
+                            Us</a>
+                    </div>
+                </div>
+
+                <!-- Column 3: About -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <h6 class="text-xl font-bold text-white mb-5">ABOUT US</h6>
+                    <div class="space-y-3">
+                        <a href="our-mission&vision.html"
+                            class="block hover:text-amber-400 transition text-base">Mission & Vision</a>
+                        <a href="our-history.html" class="block hover:text-amber-400 transition text-base">Our
+                            History</a>
+                        <a href="our-beliefs.html" class="block hover:text-amber-400 transition text-base">Our
+                            Beliefs</a>
+                        <a href="http://rccgonline.org" class="block hover:text-amber-400 transition text-base">RCCG
+                            TV</a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="md:col-span-3 lg:col-span-3">
+                    <h6 class="text-xl font-bold text-white mb-5">CONTACT US</h6>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="text-gray-300 text-base">Golden Crown Church</p>
+                                <p class="text-gray-400 text-sm mt-1">RCCG Zone, Lagos</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="text-gray-300 text-base">+234 814 007 4633</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <a href="mailto:info@goldencrownrccg.org"
+                                    class="text-gray-300 hover:text-amber-400 text-base block">
+                                    info@goldencrownrccg.org
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Updates -->
+                    <div class="mt-6">
+                        <p class="text-gray-300 mb-3 text-base">Stay Updated</p>
+                        <div class="flex flex-col gap-3">
+                            <input type="email" placeholder="Your email address"
+                                class="w-full px-4 py-3 bg-slate-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-base">
+                            <button class="btn-secondary px-5 py-3 rounded-lg text-base font-medium w-full">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-slate-800 mt-10 pt-8 text-center">
+                <p class="text-base text-gray-400 mb-2">© 2025 Golden Crown Church (RCCG Zone). All Rights Reserved.</p>
+                <p class="text-sm text-gray-500">Part of The Redeemed Christian Church of God Worldwide</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Mobile dropdown toggle
+        document.getElementById('mobile-dropdown-button').addEventListener('click', function () {
+            const dropdownContent = document.getElementById('mobile-dropdown-content');
+            const icon = this.querySelector('i');
+
+            dropdownContent.classList.toggle('hidden');
+
+            if (dropdownContent.classList.contains('hidden')) {
+                icon.className = 'fas fa-chevron-down text-xs';
+            } else {
+                icon.className = 'fas fa-chevron-up text-xs';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Countdown Timer for Holy Ghost Service
+        function updateCountdown() {
+            // Set the next Holy Ghost Service (first Friday of next month)
+            const now = new Date();
+            let year = now.getFullYear();
+            let month = now.getMonth();
+            
+            // Get first day of next month
+            const nextMonth = new Date(year, month + 1, 1);
+            
+            // Find first Friday of next month
+            let firstFriday = new Date(nextMonth);
+            while (firstFriday.getDay() !== 5) { // 5 = Friday
+                firstFriday.setDate(firstFriday.getDate() + 1);
+            }
+            
+            // Set time to 7:00 PM
+            firstFriday.setHours(19, 0, 0, 0);
+            
+            const total = firstFriday - now;
+            
+            if (total < 0) {
+                // If event has passed, show next month
+                month++;
+                if (month > 11) {
+                    month = 0;
+                    year++;
+                }
+                
+                const nextNextMonth = new Date(year, month + 1, 1);
+                firstFriday = new Date(nextNextMonth);
+                while (firstFriday.getDay() !== 5) {
+                    firstFriday.setDate(firstFriday.getDate() + 1);
+                }
+                firstFriday.setHours(19, 0, 0, 0);
+                
+                const newTotal = firstFriday - now;
+                updateDisplay(newTotal);
+            } else {
+                updateDisplay(total);
+            }
+        }
+        
+        function updateDisplay(total) {
+            const days = Math.floor(total / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((total % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((total % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((total % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+        }
+        
+        // Initialize and update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Newsletter subscription
+        document.querySelectorAll('.btn-secondary').forEach(button => {
+            if (button.textContent.includes('Subscribe')) {
+                button.addEventListener('click', function () {
+                    const emailInput = this.closest('div').querySelector('input[type="email"]');
+                    if (emailInput && emailInput.value) {
+                        alert('Thank you for subscribing to Golden Crown Church event updates! You\'ll receive notifications about upcoming programs.');
+                        emailInput.value = '';
+                    } else {
+                        alert('Please enter your email address.');
+                    }
+                });
+            }
+        });
+        
+        // Event registration buttons
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            if (link.textContent.includes('Register') || link.textContent.includes('Details') || link.textContent.includes('Info')) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Event registration and details will be available soon. Please check back or contact the church office for more information.');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

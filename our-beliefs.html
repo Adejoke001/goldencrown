@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Golden Crown Church (RCCG Zone) – Our Core Beliefs & Doctrinal Statement">
+    <title>Our Beliefs - Golden Crown Church - RCCG Zone</title>
+    <link rel="shortcut icon" href="/images/logo2.ico" type="image/x-icon">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS (Animate on Scroll) CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Custom Styles - Matching Homepage */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+        }
+
+        .blue-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+
+        .rccg-gradient {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+        }
+
+        .nav-link-hover:hover {
+            color: #d97706 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(217, 119, 6, 0.3);
+        }
+
+        .btn-rccg {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-rccg:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(204, 0, 0, 0.3);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            -webkit-background-clip: text;
+             background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            display: block;
+        }
+
+        .tick-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tick-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tick-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #d97706;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            flex-shrink: 0;
+        }
+
+        /* RCCG Colors */
+        .text-rccg-red {
+            color: #CC0000;
+        }
+
+        .bg-rccg-red {
+            background-color: #CC0000;
+        }
+
+        .border-rccg-red {
+            border-color: #CC0000;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .icon-circle {
+                width: 60px;
+                height: 60px;
+            }
+
+            .btn-primary,
+            .btn-secondary,
+            .btn-rccg {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: 1.8rem !important;
+            }
+        }
+
+        /* Fix for any horizontal scroll */
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Ensure all sections are full width */
+        section,
+        .section {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* Fix container padding */
+        .px-safe {
+            padding-left: max(1rem, env(safe-area-inset-left));
+            padding-right: max(1rem, env(safe-area-inset-right));
+        }
+
+        /* Belief Card Styles */
+        .belief-card {
+            border-left: 4px solid #CC0000;
+            transition: all 0.3s ease;
+        }
+
+        .belief-card:hover {
+            border-left-color: #d97706;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .scripture-box {
+            background: linear-gradient(135deg, rgba(204, 0, 0, 0.05) 0%, rgba(153, 0, 0, 0.05) 100%);
+            border-left: 4px solid #d97706;
+            font-style: italic;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .pill-red {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+            color: white;
+        }
+
+        .pill-blue {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+        }
+
+        .pill-gold {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-white shadow-lg">
+        <div class="w-full px-4 md:px-6">
+            <div class="flex justify-between items-center py-2">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold">
+                    <div class="w-10 h-10 rccg-gradient rounded-full flex items-center justify-center">
+                        <!-- <i class="fas fa-crown text-white text-lg"></i> -->
+                        <img src="/images/logo2.ico" alt="" class="rounded-full w-10 h-10">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-gray-800 leading-tight">Golden Crown</span>
+                    </div>
+                </a>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <div class="flex space-x-8">
+                        <a href="index.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Home</a>
+                        <a href="https://www.biblegateway.com" target="_blank"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">
+                            Bible
+                        </a>
+                        <a href="http://rccgonline.org" target="_blank"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">RCCG TV</a>
+
+                        <!-- Who are we Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="nav-link-hover text-gray-700 font-medium hover:text-amber-600 flex items-center focus:outline-none">
+                                About Us
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div
+                                class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                                <div class="py-2">
+                                    <a href="our-history.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        History</a>
+                                    <a href="our-mission&vision.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        Mission & Vision</a>
+                                    <a href="our-beliefs.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        Beliefs</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="programs.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Programs</a>
+                        <a href="donation.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Give</a>
+                    </div>
+                    <a href="contact.html" class="btn-rccg">Visit Us</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white py-4 border-t">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Home</a>
+                    <a href="https://www.biblegateway.com" target="_blank"
+                        class="text-gray-700 font-medium py-2 hover:text-amber-600">
+                        Bible
+                    </a>
+                    <a href="http://rccgonline.org" target="_blank" class="text-gray-700 font-medium py-2 hover:text-amber-600">RCCG
+                        TV</a>
+
+                    <!-- Mobile Dropdown Trigger -->
+                    <button id="mobile-dropdown-button"
+                        class="text-gray-700 font-medium py-2 hover:text-amber-600 flex items-center justify-between focus:outline-none">
+                        About Us
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+
+                    <!-- Mobile Dropdown Content -->
+                    <div id="mobile-dropdown-content" class="hidden pl-4 border-l-2 border-amber-100">
+                        <a href="our-history.html" class="block py-2 text-gray-600 hover:text-amber-600">Our History</a>
+                        <a href="our-mission&vision.html" class="block py-2 text-gray-600 hover:text-amber-600">Our
+                            Mission & Vision</a>
+                        <a href="our-beliefs.html" class="block py-2 text-gray-600 hover:text-amber-600">Our Beliefs</a>
+                    </div>
+
+                    <a href="programs.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Programs</a>
+                    <a href="donation.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Give</a>
+                    <a href="contact.html" class="btn-rccg text-center">Visit Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="relative min-h-[60vh] bg-cover bg-center bg-fixed pt-20"
+        style="background-image: url('https://plus.unsplash.com/premium_photo-1664006989128-71fc47e7c3d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGJlbGllZnxlbnwwfHwwfHx8MA%3D%3D');">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-700/70 to-slate-600/60"></div>
+        <div class="relative z-10 min-h-[60vh] flex items-center justify-center py-12">
+            <div class="w-full px-4 md:px-6 text-center text-white">
+                <div class="max-w-6xl mx-auto">
+                    <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                        <i class="fas fa-cross text-amber-300"></i>
+                        <span class="font-medium">RCCG - Golden Crown Zone</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
+                        Our Beliefs
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-6 text-gray-200 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+                        The Doctrinal Foundation of The Redeemed Christian Church of God <br> Golden Crown Zone
+                    </p>
+                    <div class="mt-8" data-aos="fade-up" data-aos-delay="600">
+                        <a href="#core-beliefs" class="btn-secondary inline-block mr-4">
+                            <i class="fas fa-book-bible mr-2"></i>Core Beliefs
+                        </a>
+                        <a href="#statement-of-faith" class="btn-primary inline-block">
+                            <i class="fas fa-scroll mr-2"></i>Statement of Faith
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CORE BELIEFS SECTION -->
+    <section id="core-beliefs" class="py-16 md:py-20 bg-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-rccg-red mb-4 font-semibold tracking-wide">FOUNDATIONAL TRUTHS</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Core Beliefs</h2>
+                <div class="flex justify-center mb-8">
+                    <div class="w-24 h-1 rccg-gradient rounded-full"></div>
+                </div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    As a parish of the Redeemed Christian Church of God, we adhere to the fundamental beliefs of historic Christianity and the Pentecostal movement.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+                <!-- Belief 1 -->
+                <div class="belief-card bg-white rounded-xl shadow-lg p-6 md:p-8" data-aos="fade-up">
+                    <div class="icon-circle rccg-gradient mb-6">
+                        <i class="fas fa-bible text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">The Bible</h4>
+                    <p class="text-gray-600 mb-4">
+                        We believe the Bible is the inspired, infallible, and authoritative Word of God. It is our supreme authority in all matters of faith and conduct.
+                    </p>
+                    <div class="scripture-box p-4 rounded-lg">
+                        <p class="text-gray-700">
+                            "All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness."
+                        </p>
+                        <p class="text-rccg-red font-semibold mt-2">- 2 Timothy 3:16</p>
+                    </div>
+                </div>
+
+                <!-- Belief 2 -->
+                <div class="belief-card bg-white rounded-xl shadow-lg p-6 md:p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-circle rccg-gradient mb-6">
+                        <i class="fas fa-cross text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">The Trinity</h4>
+                    <p class="text-gray-600 mb-4">
+                        We believe in one God eternally existent in three persons: Father, Son, and Holy Spirit—co-equal and co-eternal.
+                    </p>
+                    <div class="scripture-box p-4 rounded-lg">
+                        <p class="text-gray-700">
+                            "Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit."
+                        </p>
+                        <p class="text-rccg-red font-semibold mt-2">- Matthew 28:19</p>
+                    </div>
+                </div>
+
+                <!-- Belief 3 -->
+                <div class="belief-card bg-white rounded-xl shadow-lg p-6 md:p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-circle rccg-gradient mb-6">
+                        <i class="fas fa-dove text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Salvation</h4>
+                    <p class="text-gray-600 mb-4">
+                        We believe in salvation through faith in Jesus Christ alone, who died for our sins and rose again, offering redemption to all who believe.
+                    </p>
+                    <div class="scripture-box p-4 rounded-lg">
+                        <p class="text-gray-700">
+                            "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."
+                        </p>
+                        <p class="text-rccg-red font-semibold mt-2">- John 3:16</p>
+                    </div>
+                </div>
+
+                <!-- Belief 4 -->
+                <div class="belief-card bg-white rounded-xl shadow-lg p-6 md:p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-circle blue-gradient mb-6">
+                        <i class="fas fa-fire text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">The Holy Spirit</h4>
+                    <p class="text-gray-600 mb-4">
+                        We believe in the baptism of the Holy Spirit with the evidence of speaking in tongues, and the continuing ministry of the Holy Spirit through spiritual gifts.
+                    </p>
+                    <div class="scripture-box p-4 rounded-lg">
+                        <p class="text-gray-700">
+                            "For we were all baptized by one Spirit so as to form one body... and we were all given the one Spirit to drink."
+                        </p>
+                        <p class="text-rccg-red font-semibold mt-2">- 1 Corinthians 12:13</p>
+                    </div>
+                </div>
+
+                <!-- Belief 5 -->
+                <div class="belief-card bg-white rounded-xl shadow-lg p-6 md:p-8" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon-circle blue-gradient mb-6">
+                        <i class="fas fa-church text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">The Church</h4>
+                    <p class="text-gray-600 mb-4">
+                        We believe the Church is the body of Christ, consisting of all believers, called to worship God, proclaim the gospel, and serve humanity.
+                    </p>
+                    <div class="scripture-box p-4 rounded-lg">
+                        <p class="text-gray-700">
+                            "And God placed all things under his feet and appointed him to be head over everything for the church, which is his body."
+                        </p>
+                        <p class="text-rccg-red font-semibold mt-2">- Ephesians 1:22-23</p>
+                    </div>
+                </div>
+
+                <!-- Belief 6 -->
+                <div class="belief-card bg-white rounded-xl shadow-lg p-6 md:p-8" data-aos="fade-up" data-aos-delay="500">
+                    <div class="icon-circle gold-gradient mb-6">
+                        <i class="fas fa-arrow-up text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">The Second Coming</h4>
+                    <p class="text-gray-600 mb-4">
+                        We believe in the personal, imminent return of Jesus Christ, the resurrection of both the saved and the lost, and the final judgment.
+                    </p>
+                    <div class="scripture-box p-4 rounded-lg">
+                        <p class="text-gray-700">
+                            "For the Lord himself will come down from heaven, with a loud command, with the voice of the archangel and with the trumpet call of God."
+                        </p>
+                        <p class="text-rccg-red font-semibold mt-2">- 1 Thessalonians 4:16</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATEMENT OF FAITH -->
+    <section id="statement-of-faith" class="py-16 md:py-20 bg-gradient-to-b from-blue-50 to-gray-50 w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-amber-600 mb-4 font-semibold tracking-wide">DOCTRINAL STATEMENT</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">RCCG Statement of Faith</h2>
+                <div class="flex justify-center mb-8">
+                    <div class="w-24 h-1 rccg-gradient rounded-full"></div>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Article 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8" data-aos="fade-up">
+                    <div class="flex items-start mb-6">
+                        <div class="flex-shrink-0">
+                            <span class="pill pill-red">Article 1</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 ml-4">The Scriptures</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        The Bible is the inspired Word of God, the product of holy men of old who spoke and wrote as they were moved by the Holy Spirit. We accept the New Covenant, as recorded in the New Testament, as our infallible guide in matters pertaining to conduct and doctrine.
+                    </p>
+                    <div class="tick-list mt-6">
+                        <li>The Bible is divinely inspired and infallible</li>
+                        <li>It is the supreme authority in all matters of faith and conduct</li>
+                        <li>Both Old and New Testaments are God's revelation to humanity</li>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start mb-6">
+                        <div class="flex-shrink-0">
+                            <span class="pill pill-blue">Article 2</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 ml-4">The Godhead</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Our God is one, but manifested in three persons—the Father, the Son, and the Holy Spirit, being co-equal and co-eternal. God the Father is greater than all, the Source of the Word, and the Begetter.
+                    </p>
+                    <div class="tick-list mt-6">
+                        <li>One God eternally existent in three persons</li>
+                        <li>Jesus Christ is the Son of God, born of a virgin</li>
+                        <li>The Holy Spirit proceeds from the Father and the Son</li>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start mb-6">
+                        <div class="flex-shrink-0">
+                            <span class="pill pill-gold">Article 3</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 ml-4">Salvation & Redemption</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Man's only hope of redemption is through the shed blood of Jesus Christ the Son of God. Salvation is received through repentance toward God and faith toward the Lord Jesus Christ.
+                    </p>
+                    <div class="tick-list mt-6">
+                        <li>Salvation is by grace through faith in Christ</li>
+                        <li>All have sinned and fall short of God's glory</li>
+                        <li>Redemption includes healing and deliverance</li>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-start mb-6">
+                        <div class="flex-shrink-0">
+                            <span class="pill pill-red">Article 4</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 ml-4">Ordinances of the Church</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        We practice two ordinances: Water Baptism by immersion, and Holy Communion (the Lord's Supper). Baptism is for believers only and is done by immersion. Communion is taken in remembrance of Jesus' sacrifice.
+                    </p>
+                    <div class="tick-list mt-6">
+                        <li>Baptism by immersion for believers</li>
+                        <li>Holy Communion in remembrance of Christ</li>
+                        <li>Both ordinances are symbolic, not saving</li>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-start mb-6">
+                        <div class="flex-shrink-0">
+                            <span class="pill pill-blue">Article 5</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 ml-4">The Church & Its Mission</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        The Church is the body of Christ, the habitation of God through the Spirit, with divine appointments for the fulfillment of her great commission. Each believer is an integral part of the Church.
+                    </p>
+                    <div class="tick-list mt-6">
+                        <li>The Church is Christ's body on earth</li>
+                        <li>Every believer has a role in ministry</li>
+                        <li>The Great Commission is our mandate</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENTECOSTAL DISTINCTIVES -->
+    <section class="py-16 md:py-20 bg-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-rccg-red mb-4 font-semibold tracking-wide">PENTECOSTAL HERITAGE</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Pentecostal Distinctives</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">As part of the Pentecostal movement, we emphasize these biblical truths:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+                <!-- Distinctive 1 -->
+                <div class="bg-gradient-to-r from-red-50 to-amber-50 rounded-xl p-6 md:p-8" data-aos="fade-right">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rccg-gradient rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-language text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800">Baptism in the Holy Spirit</h4>
+                    </div>
+                    <p class="text-gray-600">
+                        We believe in the baptism of the Holy Spirit as a distinct experience from salvation, empowering believers for service and witness. The initial physical evidence is speaking in tongues.
+                    </p>
+                </div>
+
+                <!-- Distinctive 2 -->
+                <div class="bg-gradient-to-r from-amber-50 to-blue-50 rounded-xl p-6 md:p-8" data-aos="fade-left">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 blue-gradient rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-star-of-david text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800">Spiritual Gifts</h4>
+                    </div>
+                    <p class="text-gray-600">
+                        The nine gifts of the Spirit are operational in the Church today for edification, exhortation, and comfort. These include gifts of healing, miracles, prophecy, and discernment.
+                    </p>
+                </div>
+
+                <!-- Distinctive 3 -->
+                <div class="bg-gradient-to-r from-blue-50 to-red-50 rounded-xl p-6 md:p-8" data-aos="fade-right">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 gold-gradient rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-heart text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800">Divine Healing</h4>
+                    </div>
+                    <p class="text-gray-600">
+                        Healing is provided for in the atonement of Christ and is the privilege of all believers. We pray for the sick and believe God still performs miracles today.
+                    </p>
+                </div>
+
+                <!-- Distinctive 4 -->
+                <div class="bg-gradient-to-r from-red-50 to-blue-50 rounded-xl p-6 md:p-8" data-aos="fade-left">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rccg-gradient rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-cloud text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800">Second Coming of Christ</h4>
+                    </div>
+                    <p class="text-gray-600">
+                        We believe in the imminent, personal return of Jesus Christ. This blessed hope has a vital bearing on the personal life and service of the believer.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="index.html#contact" class="btn-primary inline-block mr-4">
+                    <i class="fas fa-question-circle mr-2"></i>Have Questions?
+                </a>
+                <a href="index.html#services" class="btn-secondary inline-block">
+                    <i class="fas fa-calendar-alt mr-2"></i>Join Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+     <footer class="bg-slate-900 text-gray-300 w-full">
+        <div class="w-full px-4 md:px-6 mx-auto py-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Column 1: Brand (Spans 4 columns) -->
+                <div class="md:col-span-4 lg:col-span-4">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-8 h-8 rccg-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                            <img src="/images/logo2.ico" alt="RCCG Logo" class="w-8 h-8 object-contain rounded-full">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-bold text-white leading-tight">Golden Crown</span>
+
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed text-base mb-6 space-y-2">
+                        A vibrant parish of the Redeemed Christian Church of God committed to making heaven, taking as
+                        many people with us, and having a member of RCCG in every family of all nations.
+                    </p>
+                    <div class="flex space-x-5">
+                        <a href="https://facebook.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <!--EXTRA SPACE-->
+                <div class="md:col-span-1 lg:col-span-1">
+
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <h6 class="text-xl font-bold text-white mb-5">QUICK LINKS</h6>
+                    <div class="space-y-3">
+                        <a href="index.html" class="block hover:text-amber-400 transition text-base">Home</a>
+                        <a href="http://rccgonline.org" target="_blank"
+                            class="block hover:text-amber-400 transition text-base">RCCG TV</a>
+                        <a href="programs.html"
+                            class="block hover:text-amber-400 transition text-base">Programs</a>
+                        <a href="donation.html" class="block hover:text-amber-400 transition text-base">Give</a>
+                        <a href="contact.html" class="block hover:text-amber-400 transition text-base">Visit
+                            Us</a>
+                    </div>
+                </div>
+
+                <!-- Column 3: About -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <h6 class="text-xl font-bold text-white mb-5">ABOUT US</h6>
+                    <div class="space-y-3">
+                        <a href="our-mission&vision.html"
+                            class="block hover:text-amber-400 transition text-base">Mission & Vision</a>
+                        <a href="our-history.html" class="block hover:text-amber-400 transition text-base">Our
+                            History</a>
+                        <a href="our-beliefs.html" class="block hover:text-amber-400 transition text-base">Our
+                            Beliefs</a>
+                        <a href="http://rccgonline.org" class="block hover:text-amber-400 transition text-base">RCCG
+                            TV</a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="md:col-span-3 lg:col-span-3">
+                    <h6 class="text-xl font-bold text-white mb-5">CONTACT US</h6>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="text-gray-300 text-base">Golden Crown Church</p>
+                                <p class="text-gray-400 text-sm mt-1">RCCG Zone, Lagos</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="text-gray-300 text-base">+234 814 007 4633</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <a href="mailto:info@goldencrownrccg.org"
+                                    class="text-gray-300 hover:text-amber-400 text-base block">
+                                    info@goldencrownrccg.org
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Updates -->
+                    <div class="mt-6">
+                        <p class="text-gray-300 mb-3 text-base">Stay Updated</p>
+                        <div class="flex flex-col gap-3">
+                            <input type="email" placeholder="Your email address"
+                                class="w-full px-4 py-3 bg-slate-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-base">
+                            <button class="btn-secondary px-5 py-3 rounded-lg text-base font-medium w-full">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-slate-800 mt-10 pt-8 text-center">
+                <p class="text-base text-gray-400 mb-2">© 2025 Golden Crown Church (RCCG Zone). All Rights Reserved.</p>
+                <p class="text-sm text-gray-500">Part of The Redeemed Christian Church of God Worldwide</p>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = document.getElementById('mobile-menu-button');
+            if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+
+        // Mobile dropdown toggle
+        document.getElementById('mobile-dropdown-button').addEventListener('click', function () {
+            const dropdownContent = document.getElementById('mobile-dropdown-content');
+            const icon = this.querySelector('i');
+
+            dropdownContent.classList.toggle('hidden');
+
+            if (dropdownContent.classList.contains('hidden')) {
+                icon.className = 'fas fa-chevron-down text-xs';
+            } else {
+                icon.className = 'fas fa-chevron-up text-xs';
+            }
+        });
+
+        // Close mobile dropdown when clicking elsewhere
+        document.addEventListener('click', function (event) {
+            const dropdownButton = document.getElementById('mobile-dropdown-button');
+            const dropdownContent = document.getElementById('mobile-dropdown-content');
+            const icon = dropdownButton.querySelector('i');
+
+            if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+                if (!dropdownContent.classList.contains('hidden')) {
+                    dropdownContent.classList.add('hidden');
+                    icon.className = 'fas fa-chevron-down text-xs';
+                }
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Prevent horizontal scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.style.overflowX = 'hidden';
+            document.documentElement.style.overflowX = 'hidden';
+        });
+
+        // Newsletter subscription
+        document.querySelector('.btn-secondary').addEventListener('click', function() {
+            const emailInput = document.querySelector('input[type="email"]');
+            if (emailInput.value) {
+                alert('Thank you for subscribing to Golden Crown Church updates! We\'ll send you weekly devotionals and church news.');
+                emailInput.value = '';
+            } else {
+                alert('Please enter your email address.');
+            }
+        });
+    </script>
+</body>
+
+</html>

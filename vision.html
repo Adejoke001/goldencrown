@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Golden Crown Church Vision – Our Future Direction as an RCCG Zone">
+    <title>Our Vision - (RCCG) Golden Crown Zone </title>
+    <link rel="shortcut icon" href="/images/logo2.ico" type="image/x-icon">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS (Animate on Scroll) CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Custom Styles - Matching Homepage */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+        }
+
+        .blue-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+
+        .nav-link-hover:hover {
+            color: #d97706 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(217, 119, 6, 0.3);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(rgba(145, 98, 45, 0.85), rgba(132, 96, 33, 0.9));
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            -webkit-background-clip: text;
+             background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            display: block;
+        }
+
+        .vision-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #d97706;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .vision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .vision-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+
+        /* RCCG Specific Colors */
+        .rccg-red {
+            color: #CC0000;
+        }
+
+        .rccg-bg-red {
+            background-color: #CC0000;
+        }
+
+        .rccg-gradient {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+        }
+
+        /* Vision Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, #d97706, #f59e0b);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #d97706;
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        /* Container fix for full width */
+        .full-width-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Responsive image fixes */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .vision-card {
+                padding: 1.5rem;
+            }
+
+            .vision-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            /* Timeline Responsive */
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: 1.8rem !important;
+            }
+        }
+
+        .footer-top-overlay {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95));
+        }
+
+        /* Fix for any horizontal scroll */
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Ensure all sections are full width */
+        section,
+        .section {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* Fix container padding */
+        .px-safe {
+            padding-left: max(1rem, env(safe-area-inset-left));
+            padding-right: max(1rem, env(safe-area-inset-right));
+        }
+
+        /* Vision Pillars */
+        .pillar-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 1rem;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(217, 119, 6, 0.15);
+            border-color: #d97706;
+        }
+
+        .pillar-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Quote Styling */
+        .vision-quote {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: 1rem;
+            padding: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-quote::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- NAVBAR - Matching Homepage -->
+   <nav class="fixed w-full z-50 bg-white shadow-lg">
+        <div class="w-full px-4 md:px-6">
+            <div class="flex justify-between items-center py-2">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold">
+                    <div class="w-10 h-10 rccg-gradient rounded-full flex items-center justify-center">
+                        <!-- <i class="fas fa-crown text-white text-lg"></i> -->
+                        <img src="/images/logo2.ico" alt="" class="rounded-full w-10 h-10">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-gray-800 leading-tight">Golden Crown</span>
+                    </div>
+                </a>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <div class="flex space-x-8">
+                        <a href="index.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Home</a>
+                        <a href="https://www.biblegateway.com" target="_blank"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">
+                            Bible
+                        </a>
+                        <a href="http://rccgonline.org"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">RCCG TV</a>
+
+                        <!-- Who are we Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="nav-link-hover text-gray-700 font-medium hover:text-amber-600 flex items-center focus:outline-none">
+                                About Us
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div
+                                class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                                <div class="py-2">
+                                    <a href="our-history.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        History</a>
+                                    <a href="our-mission&vision.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        Mission & Vision</a>
+                                    <a href="our-beliefs.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        Beliefs</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="programs.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Programs</a>
+                        <a href="donation.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Give</a>
+                    </div>
+                    <a href="contact.html" class="btn-rccg">Visit Us</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white py-4 border-t">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Home</a>
+                    <a href="https://www.biblegateway.com" target="_blank"
+                        class="text-gray-700 font-medium py-2 hover:text-amber-600">
+                        Bible
+                    </a>
+                    <a href="http://rccgonline.org" class="text-gray-700 font-medium py-2 hover:text-amber-600">RCCG
+                        TV</a>
+
+                    <!-- Mobile Dropdown Trigger -->
+                    <button id="mobile-dropdown-button"
+                        class="text-gray-700 font-medium py-2 hover:text-amber-600 flex items-center justify-between focus:outline-none">
+                        About Us
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+
+                    <!-- Mobile Dropdown Content -->
+                    <div id="mobile-dropdown-content" class="hidden pl-4 border-l-2 border-amber-100">
+                        <a href="our-history.html" class="block py-2 text-gray-600 hover:text-amber-600">Our History</a>
+                        <a href="our-mission&vision.html" class="block py-2 text-gray-600 hover:text-amber-600">Our
+                            Mission & Vision</a>
+                        <a href="our-beliefs.html" class="block py-2 text-gray-600 hover:text-amber-600">Our Beliefs</a>
+                    </div>
+
+                    <a href="programs.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Programs</a>
+                    <a href="donation.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Give</a>
+                    <a href="contact.html" class="btn-rccg text-center">Visit Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- VISION HERO SECTION -->
+    <div class="relative min-h-screen bg-cover bg-center bg-fixed pt-16"
+        style="background-image: url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1200&auto=format&fit=crop&q=80');">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 min-h-screen flex items-center justify-center py-20">
+            <div class="w-full px-4 md:px-6 text-center text-white">
+                <div class="max-w-6xl mx-auto">
+                    <div class="mb-8">
+                        <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                            <i class="fas fa-eye text-amber-300"></i>
+                            <span class="font-medium">Seeing Beyond the Present</span>
+                        </div>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight" data-aos="fade-up">
+                            Our Vision & Future
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+                            Propelling Forward with Divine Purpose and Strategic Growth
+                        </p>
+                    </div>
+                    
+                    <div class="mt-12" data-aos="fade-up" data-aos-delay="600">
+                        <a href="#vision-statement" class="btn-secondary inline-block mr-4">
+                            Vision Statement
+                        </a>
+                        <a href="#vision-pillars" class="btn-primary inline-block">
+                            Our Vision Pillars
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VISION STATEMENT -->
+    <section id="vision-statement" class="py-16 md:py-20 bg-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-amber-600 mb-4 font-semibold tracking-wide">OUR PROPHETIC DIRECTION</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">The Vision of Golden Crown Church</h2>
+                <div class="flex justify-center mb-8">
+                    <div class="w-24 h-1 bg-gradient-to-r from-amber-600 to-blue-600 rounded-full"></div>
+                </div>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="vision-quote mb-12" data-aos="zoom-in">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-center">"To build a thriving, multi-generational church family that transforms communities through the power of the Gospel, raising kingdom leaders who impact every sphere of society."</h3>
+                    <div class="flex justify-center items-center mt-8">
+                        <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-quote-right text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg">Golden Crown Church Vision</p>
+                            <p class="text-amber-200">RCCG Zone - 2025 and Beyond</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="vision-card" data-aos="fade-right">
+                        <div class="vision-icon gold-gradient">
+                            <i class="fas fa-compass text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Prophetic Mandate</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            God has called Golden Crown Church to be a beacon of hope and transformation in our generation. We are commissioned to raise a people of purpose, power, and praise who will establish God's kingdom in every territory we are planted.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Our vision extends beyond the four walls of our church building into homes, workplaces, schools, and government institutions - transforming society through kingdom principles.
+                        </p>
+                    </div>
+
+                    <div class="vision-card" data-aos="fade-left" data-aos-delay="200">
+                        <div class="vision-icon blue-gradient">
+                            <i class="fas fa-bullseye text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Strategic Focus</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            We are strategically positioned to reach the unreached, disciple the believers, and deploy kingdom ambassadors into every sector of society. Our focus is on holistic transformation - spiritual, social, economic, and cultural.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            By 2030, we envision Golden Crown Church as a model RCCG zone, impacting not just our immediate community but serving as a resource center for church planting and leadership development across our region.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISION PILLARS -->
+    <section id="vision-pillars" class="py-16 md:py-20 bg-gradient-to-b from-blue-50 to-gray-50 w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-amber-600 mb-4 font-semibold tracking-wide">FOUNDATIONAL PILLARS</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">The Five Pillars of Our Vision</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">These pillars support everything we do and guide our growth strategy</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+                <!-- Pillar 1 -->
+                <div class="pillar-card" data-aos="fade-up">
+                    <div class="pillar-icon gold-gradient">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Powerful Worship</h4>
+                    <p class="text-gray-600">
+                        Cultivating an atmosphere where God's presence is tangible and lives are transformed through authentic worship and prayer.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <h5 class="font-bold text-amber-600 mb-2">Key Initiatives:</h5>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 24/7 Prayer Altar</li>
+                            <li>• Worship Training School</li>
+                            <li>• Monthly Night Vigils</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pillar-icon rccg-gradient">
+                        <i class="fas fa-book-bible"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Biblical Teaching</h4>
+                    <p class="text-gray-600">
+                        Equipping believers with practical, life-changing Bible knowledge that transforms character and conduct.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <h5 class="font-bold text-red-600 mb-2">Key Initiatives:</h5>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Bible College Extension</li>
+                            <li>• Digital Bible Resources</li>
+                            <li>• Leadership Training Institute</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pillar-icon blue-gradient">
+                        <i class="fas fa-hands-holding-heart"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Community Impact</h4>
+                    <p class="text-gray-600">
+                        Demonstrating God's love through practical service, meeting needs, and transforming our community.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <h5 class="font-bold text-blue-600 mb-2">Key Initiatives:</h5>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Community Development Center</li>
+                            <li>• Skills Acquisition Programs</li>
+                            <li>• Healthcare Outreach</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pillar-icon gold-gradient">
+                        <i class="fas fa-people-group"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Kingdom Families</h4>
+                    <p class="text-gray-600">
+                        Strengthening families as the foundation of society through marriage enrichment and parenting support.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <h5 class="font-bold text-amber-600 mb-2">Key Initiatives:</h5>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Family Life Ministry</li>
+                            <li>• Marriage Counseling Center</li>
+                            <li>• Parenting Workshops</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 5 -->
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="pillar-icon rccg-gradient">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Strategic Multiplication</h4>
+                    <p class="text-gray-600">
+                        Planting new churches and raising leaders to extend God's kingdom across our region and beyond.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <h5 class="font-bold text-red-600 mb-2">Key Initiatives:</h5>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Church Planting Fund</li>
+                            <li>• Leadership Development Program</li>
+                            <li>• Missionary Support Network</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pillar 6 -->
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="pillar-icon blue-gradient">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Global Influence</h4>
+                    <p class="text-gray-600">
+                        Extending our impact beyond local boundaries through missions, partnerships, and digital ministry.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <h5 class="font-bold text-blue-600 mb-2">Key Initiatives:</h5>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• International Missions Program</li>
+                            <li>• Online Church Platform</li>
+                            <li>• Global Partnership Network</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="mission.html" class="btn-primary inline-block mr-4">
+                    View Our Mission
+                </a>
+                <a href="index.html#donation" class="btn-secondary inline-block">
+                    Support Our Vision
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISION TIMELINE -->
+    <section class="py-16 md:py-20 bg-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-amber-600 mb-4 font-semibold tracking-wide">OUR STRATEGIC ROADMAP</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Vision 2025-2030: Our Growth Pathway</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">A strategic timeline for implementing our vision over the next five years</p>
+            </div>
+
+            <div class="timeline">
+                <!-- 2025 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">2025</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Foundation Strengthening</h3>
+                        </div>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Launch Leadership Development Institute</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Establish 24/7 Prayer Altar</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Complete Church Auditorium Phase 1</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Launch Digital Church Platform</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2026 -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full blue-gradient flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">2026</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Expansion Phase</h3>
+                        </div>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                <span>Plant 3 new parishes in our zone</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                <span>Launch Community Development Center</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                <span>Establish Skills Acquisition Program</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-600 mt-1 mr-2"></i>
+                                <span>Begin International Missions Program</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2027 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full rccg-gradient flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">2027</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Consolidation & Impact</h3>
+                        </div>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-600 mt-1 mr-2"></i>
+                                <span>Complete Church Auditorium Phase 2</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-600 mt-1 mr-2"></i>
+                                <span>Launch Bible College Extension</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-600 mt-1 mr-2"></i>
+                                <span>Establish 5,000-member congregation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-600 mt-1 mr-2"></i>
+                                <span>Begin Regional Church Planters Conference</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2028-2030 -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center mr-4">
+                                <span class="text-white font-bold">2028-30</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Global Influence Phase</h3>
+                        </div>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Plant churches in 3 new nations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Establish Model RCCG Zone Status</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Launch Media & Broadcasting Network</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-amber-600 mt-1 mr-2"></i>
+                                <span>Commission 100+ trained leaders</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISION IN ACTION -->
+    <section class="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-amber-600 mb-4 font-semibold tracking-wide">VISION IN MOTION</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Bringing Our Vision to Life</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">See how we're already implementing our vision through current initiatives</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
+                <div data-aos="fade-right">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Current Initiatives Advancing Our Vision</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-seedling text-amber-600"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-800 mb-2">Leadership Pipeline Program</h4>
+                                    <p class="text-gray-600">Currently training 50 emerging leaders through our discipleship school to prepare them for ministry leadership roles.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-laptop-house text-blue-600"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-800 mb-2">Digital Transformation</h4>
+                                    <p class="text-gray-600">Expanding our online presence with live streaming, virtual small groups, and digital discipleship resources.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                        <i class="fas fa-hand-holding-heart text-red-600"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-800 mb-2">Community Outreach Expansion</h4>
+                                    <p class="text-gray-600">Monthly community service projects reaching over 500 families with food, clothing, and essential supplies.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left" data-aos-delay="300">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Vision Progress Tracker</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Progress Item 1 -->
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700 font-medium">Leadership Development</span>
+                                    <span class="text-amber-600 font-bold">65%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-amber-600 h-2.5 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Progress Item 2 -->
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700 font-medium">Community Impact</span>
+                                    <span class="text-blue-600 font-bold">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Progress Item 3 -->
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700 font-medium">Church Planting</span>
+                                    <span class="text-red-600 font-bold">45%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-red-600 h-2.5 rounded-full" style="width: 45%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Progress Item 4 -->
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700 font-medium">Digital Ministry</span>
+                                    <span class="text-green-600 font-bold">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                            <div class="flex">
+                                <i class="fas fa-lightbulb text-amber-600 text-xl mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Your Role in Our Vision</h4>
+                                    <p class="text-gray-600 text-sm">Every member has a part to play. Discover how you can contribute to making our vision a reality.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" data-aos="fade-up">
+                <div class="max-w-3xl mx-auto bg-gradient-to-r from-amber-50 to-blue-50 rounded-2xl p-8 md:p-10">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Join Us in Fulfilling God's Vision</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Our vision is more than a statement - it's a calling that requires every member's participation. Whether through prayer, service, giving, or using your gifts, you have a vital role to play in bringing this vision to reality.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="index.html#contact" class="btn-primary">
+                            Get Involved
+                        </a>
+                        <a href="index.html#donation" class="btn-secondary">
+                            Support Financially
+                        </a>
+                        <a href="#" class="btn-primary bg-gray-800 hover:bg-gray-900">
+                            Pray With Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+   <footer class="bg-slate-900 text-gray-300 w-full">
+        <div class="w-full px-4 md:px-6 mx-auto py-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Column 1: Brand (Spans 4 columns) -->
+                <div class="md:col-span-4 lg:col-span-4">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-8 h-8 rccg-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                            <img src="/images/logo2.ico" alt="RCCG Logo" class="w-8 h-8 object-contain rounded-full">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-bold text-white leading-tight">Golden Crown</span>
+
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed text-base mb-6 space-y-2">
+                        A vibrant parish of the Redeemed Christian Church of God committed to making heaven, taking as
+                        many people with us, and having a member of RCCG in every family of all nations.
+                    </p>
+                    <div class="flex space-x-5">
+                        <a href="https://facebook.com/rccg" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/rccg" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/rccg" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/rccg" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <!--EXTRA SPACE-->
+                <div class="md:col-span-1 lg:col-span-1">
+
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <h6 class="text-xl font-bold text-white mb-5">QUICK LINKS</h6>
+                    <div class="space-y-3">
+                        <a href="index.html" class="block hover:text-amber-400 transition text-base">Home</a>
+                        <a href="index.html#services"
+                            class="block hover:text-amber-400 transition text-base">Services</a>
+                        <a href="index.html#programs"
+                            class="block hover:text-amber-400 transition text-base">Programs</a>
+                        <a href="donation.html" class="block hover:text-amber-400 transition text-base">Give</a>
+                        <a href="index.html#contact" class="block hover:text-amber-400 transition text-base">Visit
+                            Us</a>
+                    </div>
+                </div>
+
+                <!-- Column 3: About -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <h6 class="text-xl font-bold text-white mb-5">ABOUT US</h6>
+                    <div class="space-y-3">
+                        <a href="our-mission&vision.html"
+                            class="block hover:text-amber-400 transition text-base">Mission & Vision</a>
+                        <a href="our-history.html" class="block hover:text-amber-400 transition text-base">Our
+                            History</a>
+                        <a href="our-beliefs.html" class="block hover:text-amber-400 transition text-base">Our
+                            Beliefs</a>
+                        <a href="http://rccgonline.org" class="block hover:text-amber-400 transition text-base">RCCG
+                            TV</a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="md:col-span-3 lg:col-span-3">
+                    <h6 class="text-xl font-bold text-white mb-5">CONTACT US</h6>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="text-gray-300 text-base">Golden Crown Church</p>
+                                <p class="text-gray-400 text-sm mt-1">RCCG Zone, Lagos</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="text-gray-300 text-base">+234 814 007 4633</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <a href="mailto:info@goldencrownrccg.org"
+                                    class="text-gray-300 hover:text-amber-400 text-base block">
+                                    info@goldencrownrccg.org
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Updates -->
+                    <div class="mt-6">
+                        <p class="text-gray-300 mb-3 text-base">Stay Updated</p>
+                        <div class="flex flex-col gap-3">
+                            <input type="email" placeholder="Your email address"
+                                class="w-full px-4 py-3 bg-slate-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-base">
+                            <button class="btn-secondary px-5 py-3 rounded-lg text-base font-medium w-full">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-slate-800 mt-10 pt-8 text-center">
+                <p class="text-base text-gray-400 mb-2">© 2025 Golden Crown Church (RCCG Zone). All Rights Reserved.</p>
+                <p class="text-sm text-gray-500">Part of The Redeemed Christian Church of God Worldwide</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = document.getElementById('mobile-menu-button');
+            if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+
+        // Mobile dropdown toggle
+        document.getElementById('mobile-dropdown-button').addEventListener('click', function () {
+            const dropdownContent = document.getElementById('mobile-dropdown-content');
+            const icon = this.querySelector('i');
+
+            dropdownContent.classList.toggle('hidden');
+
+            if (dropdownContent.classList.contains('hidden')) {
+                icon.className = 'fas fa-chevron-down text-xs';
+            } else {
+                icon.className = 'fas fa-chevron-up text-xs';
+            }
+        });
+
+        // Close mobile dropdown when clicking elsewhere
+        document.addEventListener('click', function (event) {
+            const dropdownButton = document.getElementById('mobile-dropdown-button');
+            const dropdownContent = document.getElementById('mobile-dropdown-content');
+            const icon = dropdownButton.querySelector('i');
+
+            if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+                if (!dropdownContent.classList.contains('hidden')) {
+                    dropdownContent.classList.add('hidden');
+                    icon.className = 'fas fa-chevron-down text-xs';
+                }
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Prevent horizontal scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.style.overflowX = 'hidden';
+            document.documentElement.style.overflowX = 'hidden';
+        });
+
+        // Fix for iOS viewport
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+
+        // Animate progress bars on scroll
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.bg-amber-600, .bg-blue-600, .bg-red-600, .bg-green-600');
+            
+            progressBars.forEach(bar => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const width = bar.style.width;
+                            bar.style.width = '0%';
+                            setTimeout(() => {
+                                bar.style.transition = 'width 1.5s ease-in-out';
+                                bar.style.width = width;
+                            }, 300);
+                            observer.unobserve(bar);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(bar);
+            });
+        }
+
+        // Initialize progress bar animation
+        document.addEventListener('DOMContentLoaded', animateProgressBars);
+    </script>
+</body>
+
+</html>

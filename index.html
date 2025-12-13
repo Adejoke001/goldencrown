@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Golden Crown Church (RCCG Zone) – Uplifting Lives Through Faith & Service">
+    <title>Golden Crown Church - RCCG Zone</title>
+    <link rel="shortcut icon" href="/images/logo2.ico" type="image/x-icon">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS (Animate on Scroll) CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Owl Carousel CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <style>
+        /* Custom Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+        }
+
+        .blue-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+
+        .rccg-gradient {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+        }
+
+        .nav-link-hover:hover {
+            color: #d97706 !important;
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(217, 119, 6, 0.3);
+        }
+
+        .btn-rccg {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-rccg:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(204, 0, 0, 0.3);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(rgba(62, 57, 57, 0.7), rgba(56, 47, 47, 0.7));
+        }
+
+        .motto-overlay {
+            background: linear-gradient(rgba(204, 0, 0, 0.85), rgba(153, 0, 0, 0.95));
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            display: block;
+        }
+
+        .tick-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tick-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tick-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #d97706;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            flex-shrink: 0;
+        }
+
+        /* Owl Carousel Custom */
+        .owl-carousel .owl-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .owl-carousel .owl-dots .owl-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1 !important;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .owl-carousel .owl-dots .owl-dot.active {
+            background: #CC0000 !important;
+            transform: scale(1.2);
+        }
+
+        .owl-carousel .owl-nav {
+            display: none;
+        }
+
+        /* Hide Owl Carousel's default dots */
+        .owl-carousel .owl-dots.disabled {
+            display: none !important;
+        }
+
+        .owl-theme .owl-dots .owl-dot span,
+        .owl-carousel .owl-dots .owl-dot span {
+            display: none !important;
+        }
+
+        /* RCCG Logo Badge */
+        .rccg-badge {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* FAQ Styles */
+        .faq-question.active {
+            background-color: #fef3c7;
+            /* Amber 50 */
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .icon-circle {
+                width: 60px;
+                height: 60px;
+            }
+
+            .btn-primary,
+            .btn-secondary,
+            .btn-rccg {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .rccg-badge {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: 1.8rem !important;
+            }
+        }
+
+        .rounded-top-4 {
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+
+        /* Fix for any horizontal scroll */
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Ensure all sections are full width */
+        section,
+        .section {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* Fix container padding */
+        .px-safe {
+            padding-left: max(1rem, env(safe-area-inset-left));
+            padding-right: max(1rem, env(safe-area-inset-right));
+        }
+
+        /* RCCG Colors */
+        .text-rccg-red {
+            color: #CC0000;
+        }
+
+        .bg-rccg-red {
+            background-color: #CC0000;
+        }
+
+        .border-rccg-red {
+            border-color: #CC0000;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-white shadow-lg">
+        <div class="w-full px-4 md:px-6">
+            <div class="flex justify-between items-center py-2">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold">
+                    <div class="w-10 h-10 rccg-gradient rounded-full flex items-center justify-center">
+                        <!-- <i class="fas fa-crown text-white text-lg"></i> -->
+                        <img src="/images/logo2.ico" alt="" class="rounded-full w-10 h-10">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-gray-800 leading-tight">Golden Crown</span>
+                    </div>
+                </a>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <div class="flex space-x-8">
+                        <a href="index.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Home</a>
+                        <a href="https://www.biblegateway.com" target="_blank"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">
+                            Bible
+                        </a>
+                        <a href="http://rccgonline.org" target="_blank"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">RCCG TV</a>
+
+                        <!-- Who are we Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="nav-link-hover text-gray-700 font-medium hover:text-amber-600 flex items-center focus:outline-none">
+                                About Us
+                                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div
+                                class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 z-50">
+                                <div class="py-2">
+                                    <a href="our-history.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        History</a>
+                                    <a href="our-mission&vision.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        Mission & Vision</a>
+                                    <a href="our-beliefs.html"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600">Our
+                                        Beliefs</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="programs.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Programs</a>
+                        <a href="donation.html"
+                            class="nav-link-hover text-gray-700 font-medium hover:text-amber-600">Give</a>
+                    </div>
+                    <a href="contact.html" class="btn-rccg">Visit Us</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white py-4 border-t">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Home</a>
+                    <a href="https://www.biblegateway.com" target="_blank"
+                        class="text-gray-700 font-medium py-2 hover:text-amber-600">
+                        Bible
+                    </a>
+                    <a href="http://rccgonline.org" target="_blank"
+                        class="text-gray-700 font-medium py-2 hover:text-amber-600">RCCG
+                        TV</a>
+
+                    <!-- Mobile Dropdown Trigger -->
+                    <button id="mobile-dropdown-button"
+                        class="text-gray-700 font-medium py-2 hover:text-amber-600 flex items-center justify-between focus:outline-none">
+                        About Us
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+
+                    <!-- Mobile Dropdown Content -->
+                    <div id="mobile-dropdown-content" class="hidden pl-4 border-l-2 border-amber-100">
+                        <a href="our-history.html" class="block py-2 text-gray-600 hover:text-amber-600">Our History</a>
+                        <a href="our-mission&vision.html" class="block py-2 text-gray-600 hover:text-amber-600">Our
+                            Mission & Vision</a>
+                        <a href="our-beliefs.html" class="block py-2 text-gray-600 hover:text-amber-600">Our Beliefs</a>
+                    </div>
+
+                    <a href="programs.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Programs</a>
+                    <a href="donation.html" class="text-gray-700 font-medium py-2 hover:text-amber-600">Give</a>
+                    <a href="contact.html" class="btn-rccg text-center">Visit Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+   <div class="relative bg-cover bg-center bg-fixed pt-16 md:pt-0"
+    style="background-image: url('https://www.rccg.org/wp-content/uploads/2020/07/PHOTO-2020-05-15-16-42-55.jpg');">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative z-10 flex items-center justify-center py-12 md:py-20 lg:min-h-screen">
+        <div class="w-full px-4 md:px-6 text-center text-white">
+            <div class="max-w-6xl mx-auto">
+                <div
+                    class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                    <i class="fas fa-cross text-amber-300"></i>
+                    <span class="font-medium">RCCG - Golden Crown Zone</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
+                    Welcome to Golden Crown Church
+                </h1>
+                <p class="text-lg md:text-2xl mb-6 text-gray-200 max-w-3xl mx-auto" data-aos="fade-up"
+                    data-aos-delay="300">
+                    A vibrant community of the Redeemed Christian Church of God where faith meets purpose
+                </p>
+                <p class="text-base md:text-lg font-semibold mb-8">Jesus Christ the Same yesterday, today, and forever <br>(Heb 13:8)</p>
+                <div class="mt-8 md:mt-12" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#services" class="btn-secondary inline-block mr-4 mb-4 md:mb-0">
+                        <i class="fas fa-calendar-alt mr-2"></i>Service Times
+                    </a>
+                    <a href="#contact" class="btn-primary inline-block">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Find Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- RCCG IDENTITY SECTION -->
+    <section class="py-16 md:py-20 bg-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-rccg-red mb-4 font-semibold tracking-wide">PART OF A GLOBAL FAMILY</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Redeemed Christian Church of God</h2>
+                <div class="flex justify-center mb-8">
+                    <div class="w-24 h-1 rccg-gradient rounded-full"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center mb-16">
+                <div class="lg:col-span-5 flex justify-center" data-aos="zoom-in">
+                    <div class="relative">
+                        <img src="/images/daddy.png" alt="Pastor E.A. Adeboye"
+                            class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-8 border-white shadow-2xl">
+                        <div class="absolute -bottom-4 -right-4 bg-rccg-red text-white p-4 rounded-full shadow-xl">
+                            <i class="fas fa-praying-hands text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7" data-aos="fade-left" data-aos-delay="300">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border-l-4 border-rccg-red">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Our Spiritual Heritage</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            As part of the Redeemed Christian Church of God Worldwide under the leadership of our Father
+                            in the Lord,
+                            <span class="font-bold text-rccg-red">Pastor E.A. Adeboye</span>, we continue the mission to
+                            make heaven,
+                            take as many people with us, and have a member of RCCG in every family of all nations.
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            With over 40,000 parishes in 170+ nations, RCCG represents one of the fastest-growing
+                            Pentecostal
+                            denominations worldwide, committed to spreading the gospel and transforming communities.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                            <div class="text-center p-4 bg-red-50 rounded-lg">
+                                <div class="stat-number">40k+</div>
+                                <p class="text-gray-700 font-medium">Parishes Worldwide</p>
+                            </div>
+                            <div class="text-center p-4 bg-blue-50 rounded-lg">
+                                <div class="stat-number">170+</div>
+                                <p class="text-gray-700 font-medium">Countries</p>
+                            </div>
+                            <div class="text-center p-4 bg-amber-50 rounded-lg">
+                                <div class="stat-number">40+</div>
+                                <p class="text-gray-700 font-medium">Years of Impact</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://rccg.org" target="_blank" class="btn-rccg">
+                                <i class="fas fa-globe mr-2"></i>RCCG Global
+                            </a>
+                            <a href="mission-vision.html" class="btn-primary">
+                                <i class="fas fa-eye mr-2"></i>Our Vision
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-16 md:py-20 bg-gradient-to-b from-blue-50 to-gray-50 w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-amber-600 mb-4 font-semibold tracking-wide">JOIN OUR WORSHIP SERVICES</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Weekly Services & Programs</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Experience the presence of God through our dynamic worship
+                    services and life-transforming programs</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Sunday Service -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1618022317592-2f5c39075646?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3VuZGF5JTIwc2VydmljZXxlbnwwfHwwfHx8MA%3D%3D"
+                            alt="Sunday Service" class="w-full h-64 object-cover">
+                        <span
+                            class="absolute top-4 left-4 bg-rccg-red text-white px-4 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-church mr-1"></i> Main Service
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h5 class="text-xl font-bold text-gray-800 mb-4">Sunday Service</h5>
+                        <p class="text-gray-600 mb-4">Join us for powerful worship, dynamic teaching, and life-changing
+                            encounters with God.</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-clock text-amber-600 mr-2"></i>
+                                <span class="font-medium">Time:</span>
+                                <span class="ml-2">8:30 AM - 11:30 AM</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-calendar text-amber-600 mr-2"></i>
+                                <span class="font-medium">Day:</span>
+                                <span class="ml-2">Every Sunday</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Midweek Service -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1544427920-c49ccfb85579?w=800&auto=format&fit=crop&q=80"
+                            alt="Bible Study" class="w-full h-64 object-cover">
+                        <span
+                            class="absolute top-4 left-4 bg-amber-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-book-bible mr-1"></i> Bible Study
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h5 class="text-xl font-bold text-gray-800 mb-4">Bible Study</h5>
+                        <p class="text-gray-600 mb-4">Deep dive into God's Word with practical teachings for everyday
+                            living.</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-clock text-amber-600 mr-2"></i>
+                                <span class="font-medium">Time:</span>
+                                <span class="ml-2">5:00 PM - 6:00pm</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-calendar text-amber-600 mr-2"></i>
+                                <span class="font-medium">Day:</span>
+                                <span class="ml-2">Every Tuesday</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prayer Meeting -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?w=800&auto=format&fit=crop&q=80"
+                            alt="Prayer Meeting" class="w-full h-64 object-cover">
+                        <span
+                            class="absolute top-4 left-4 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-pray mr-1"></i> Prayer
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h5 class="text-xl font-bold text-gray-800 mb-4">Faith Clinic</h5>
+                        <p class="text-gray-600 mb-4">Powerful prayer session for breakthrough, miracles, and divine
+                            intervention.</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-clock text-amber-600 mr-2"></i>
+                                <span class="font-medium">Time:</span>
+                                <span class="ml-2">5:00 PM - 6:00pm</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-calendar text-amber-600 mr-2"></i>
+                                <span class="font-medium">Day:</span>
+                                <span class="ml-2">Every Thursday</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#contact" class="btn-primary inline-block mr-4">
+                    <i class="fas fa-directions mr-2"></i>Get Directions
+                </a>
+                <a href="#" class="btn-secondary inline-block">
+                    <i class="fas fa-video mr-2"></i>Watch Online
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RCCG PROGRAMS -->
+    <section id="programs" class="py-16 md:py-20 bg-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-rccg-red mb-4 font-semibold tracking-wide">RCCG MINISTRIES & PROGRAMS</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Transforming Lives Through Specialized
+                    Ministries</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Discover ministries designed for every stage and season of
+                    life</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
+                <!-- Ministry 1 -->
+                <div class="text-center" data-aos="fade-up">
+                    <div class="icon-circle rccg-gradient mb-6">
+                        <i class="fas fa-users text-white text-3xl"></i>
+                    </div>
+                    <h6 class="text-xl font-bold text-gray-800 mb-4">RCCG House Fellowship</h6>
+                    <p class="text-gray-600 mb-6">
+                        Weekly home-based fellowship for spiritual growth and community bonding.
+                    </p>
+                    <a href="#" class="text-rccg-red font-semibold hover:text-red-800 inline-flex items-center">
+                        Join a Cell <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Ministry 2 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-circle rccg-gradient mb-6">
+                        <i class="fas fa-child text-white text-3xl"></i>
+                    </div>
+                    <h6 class="text-xl font-bold text-gray-800 mb-4">Children's Church</h6>
+                    <p class="text-gray-600 mb-6">
+                        Age-appropriate Bible teaching and fun activities for children (0-12 years).
+                    </p>
+                    <a href="#" class="text-rccg-red font-semibold hover:text-red-800 inline-flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Ministry 3 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-circle rccg-gradient mb-6">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                    <h6 class="text-xl font-bold text-gray-800 mb-4">Teens & Youth</h6>
+                    <p class="text-gray-600 mb-6">
+                        Dynamic programs for teenagers and young adults navigating life's challenges.
+                    </p>
+                    <a href="#" class="text-rccg-red font-semibold hover:text-red-800 inline-flex items-center">
+                        Youth Portal <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Ministry 4 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-circle rccg-gradient mb-6">
+                        <i class="fas fa-hands-helping text-white text-3xl"></i>
+                    </div>
+                    <h6 class="text-xl font-bold text-gray-800 mb-4">Charity & Outreach</h6>
+                    <p class="text-gray-600 mb-6">
+                        Community service, humanitarian aid, and evangelism programs.
+                    </p>
+                    <a href="#" class="text-rccg-red font-semibold hover:text-red-800 inline-flex items-center">
+                        Volunteer <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-amber-50 to-red-50 rounded-2xl p-6 md:p-8" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-6 md:mb-0 md:mr-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Monthly Holy Ghost Service</h3>
+                        <p class="text-gray-600">First Friday of every month • 7:00 PM</p>
+                    </div>
+                    <a href="#" class="btn-rccg">
+                        <i class="fas fa-calendar-check mr-2"></i>Mark Your Calendar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-rccg-red mb-4 font-semibold tracking-wide">FREQUENTLY ASKED QUESTIONS</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Questions & Answers</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Find answers to common questions about our church, faith, and
+                    services</p>
+                <div class="flex justify-center mt-6">
+                    <div class="w-24 h-1 rccg-gradient rounded-full"></div>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- FAQ Accordion -->
+                <div class="space-y-4" id="faq-accordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+                        data-aos="fade-up">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 transition duration-300">
+                            <span class="text-lg font-bold text-gray-800">What time are your Sunday services?</span>
+                            <i class="fas fa-chevron-down text-rccg-red transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 border-t border-gray-100 hidden">
+                            <p class="text-gray-600">Our Sunday services are held every Sunday from 8:30 AM to 11:30 AM.
+                                We also have an evening service at 5:00 PM on Tuesdays and Thursdays. </p>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <button
+                                class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 transition duration-300">
+                                <span class="text-lg font-bold text-gray-800">How can I become a member of Golden Crown
+                                    Church?</span>
+                                <i class="fas fa-chevron-down text-rccg-red transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 py-4 border-t border-gray-100 hidden">
+                                <p class="text-gray-600 mb-3">To become a member, we invite you to:</p>
+                                <ol class="list-decimal pl-5 text-gray-600 space-y-2">
+                                    <li>Attend our Sunday service</li>
+                                    <li>Complete a membership form</li>
+                                    <li>Participate in water baptism if you haven't been baptized</li>
+                                    <li>Join a house fellowship cell group</li>
+                                </ol>
+                                <p class="text-gray-600 mt-3">Visit our welcome desk on Sunday for more information.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+                            data-aos="fade-up" data-aos-delay="200">
+                            <button
+                                class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 transition duration-300">
+                                <span class="text-lg font-bold text-gray-800">What should I expect during my first
+                                    visit?</span>
+                                <i class="fas fa-chevron-down text-rccg-red transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 py-4 border-t border-gray-100 hidden">
+                                <p class="text-gray-600">We're excited to welcome you! Here's what to expect:</p>
+                                <ul class="tick-list mt-3">
+                                    <li class="text-gray-600">Friendly greeters at the entrance</li>
+                                    <li class="text-gray-600">Dynamic praise and worship (30 minutes)</li>
+                                    <li class="text-gray-600">Scripture reading and announcements</li>
+                                    <li class="text-gray-600">Powerful, Bible-based sermon (45-60 minutes)</li>
+                                    <li class="text-gray-600">Altar call and prayer ministry</li>
+                                    <li class="text-gray-600">Fellowship time after service</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+                            data-aos="fade-up" data-aos-delay="300">
+                            <button
+                                class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 transition duration-300">
+                                <span class="text-lg font-bold text-gray-800">How can I get baptized at Golden Crown
+                                    Church?</span>
+                                <i class="fas fa-chevron-down text-rccg-red transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 py-4 border-t border-gray-100 hidden">
+                                <p class="text-gray-600">We conduct water baptism quarterly. Here's the process:</p>
+                                <ol class="list-decimal pl-5 text-gray-600 space-y-2 mt-3">
+                                    <li>Attend our baptismal class (2 sessions)</li>
+                                    <li>Complete the baptism application form</li>
+                                    <li>Have a brief interview with a pastor</li>
+                                    <li>Participate in the baptism service</li>
+                                </ol>
+                                <p class="text-gray-600 mt-3">Baptism services are usually held on the last Sunday of
+                                    the month. Contact the church office for the next baptism date.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+                            data-aos="fade-up" data-aos-delay="400">
+                            <button
+                                class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 transition duration-300">
+                                <span class="text-lg font-bold text-gray-800">Do you have programs for children and
+                                    youth?</span>
+                                <i class="fas fa-chevron-down text-rccg-red transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 py-4 border-t border-gray-100 hidden">
+                                <p class="text-gray-600 mb-3">Yes! We have age-appropriate programs for all age groups:
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                    <div class="bg-amber-50 p-4 rounded-lg">
+                                        <h6 class="font-bold text-gray-800 mb-2">Children (0-12 years)</h6>
+                                        <p class="text-gray-600 text-sm">Sunday School during service<br>Vacation Bible
+                                            School (July)<br>Children's Christmas Party</p>
+                                    </div>
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <h6 class="font-bold text-gray-800 mb-2">Teens & Young adults (13-25)</h6>
+                                        <p class="text-gray-600 text-sm">Friday Youth Fellowship (5 PM)<br>Annual Youth
+                                            Camp<br>Leadership Training Programs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 6 -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+                            data-aos="fade-up" data-aos-delay="500">
+                            <button
+                                class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 transition duration-300">
+                                <span class="text-lg font-bold text-gray-800">How can I give my life to Christ?</span>
+                                <i class="fas fa-chevron-down text-rccg-red transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 py-4 border-t border-gray-100 hidden">
+                                <p class="text-gray-600 mb-3">Salvation is a simple but profound decision. Here's how:
+                                </p>
+                                <div class="bg-green-50 p-4 rounded-lg mb-3">
+                                    <p class="text-gray-700 font-medium">Pray this prayer sincerely:</p>
+                                    <p class="text-gray-600 italic mt-2">"Lord Jesus, I confess I am a sinner. I believe
+                                        you died for my sins and rose again. Forgive me of my sins. Come into my heart
+                                        and be my Lord and Savior. Thank you for saving me. In Jesus' name, Amen."</p>
+                                </div>
+                                <p class="text-gray-600">If you prayed this prayer, please let us know so we can support
+                                    your spiritual journey! Visit the altar after any service or contact our prayer
+                                    line.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 7 -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+                            data-aos="fade-up" data-aos-delay="600">
+                            <button
+                                class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 transition duration-300">
+                                <span class="text-lg font-bold text-gray-800">Do you have midweek services?</span>
+                                <i class="fas fa-chevron-down text-rccg-red transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 py-4 border-t border-gray-100 hidden">
+                                <p class="text-gray-600">Yes, we have several midweek programs:</p>
+                                <div class="space-y-3 mt-3">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-book text-amber-600 mt-1 mr-3"></i>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800">Tuesday Bible Study</h6>
+                                            <p class="text-gray-600 text-sm">5:00 PM - 6:00 PM (Church Auditorium)</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-pray text-blue-600 mt-1 mr-3"></i>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800">Thursday Faith Clinic</h6>
+                                            <p class="text-gray-600 text-sm">5:00 PM - 6:00 PM (Prayer Room)</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-home text-rccg-red mt-1 mr-3"></i>
+                                        <div>
+                                            <h6 class="font-bold text-gray-800">House Fellowship</h6>
+                                            <p class="text-gray-600 text-sm">Various days and locations (Contact for
+                                                nearest group)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 8 -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+                            data-aos="fade-up" data-aos-delay="700">
+                            <button
+                                class="faq-question w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 transition duration-300">
+                                <span class="text-lg font-bold text-gray-800">How can I request prayer or
+                                    counseling?</span>
+                                <i class="fas fa-chevron-down text-rccg-red transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 py-4 border-t border-gray-100 hidden">
+                                <p class="text-gray-600">We're here to support you in prayer and counsel:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                    <div class="p-4 bg-purple-50 rounded-lg">
+                                        <h6 class="font-bold text-gray-800 mb-2">Prayer Requests</h6>
+                                        <ul class="space-y-1 text-gray-600 text-sm">
+                                            <li>• Submit online via our website</li>
+                                            <li>• Call prayer line: +234 814 007 4633</li>
+                                            <li>• Email: prayer@goldencrownrccg.org</li>
+                                            <li>• Prayer box at church entrance</li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-4 bg-indigo-50 rounded-lg">
+                                        <h6 class="font-bold text-gray-800 mb-2">Counseling</h6>
+                                        <ul class="space-y-1 text-gray-600 text-sm">
+                                            <li>• Schedule appointment at welcome desk</li>
+                                            <li>• Call church office for booking</li>
+                                            <li>• Pastoral counseling available</li>
+                                            <li>• Marriage & family counseling</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Still Have Questions CTA -->
+                    <div class="mt-12 text-center" data-aos="fade-up">
+                        <div class="bg-gradient-to-r from-amber-50 to-red-50 rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Still Have Questions?</h3>
+                            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">We're here to help! Contact us directly and
+                                we'll get back to you as soon as possible.</p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="contact.html" class="btn-primary">
+                                    <i class="fas fa-envelope mr-2"></i>Contact Us
+                                </a>
+                                <a href="tel:+2348140074633" class="btn-secondary">
+                                    <i class="fas fa-phone mr-2"></i>Call Now
+                                </a>
+                                <a href="https://api.whatsapp.com/send?phone=2348140074633" target="_blank"
+                                    class="btn-rccg">
+                                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- DONATION SECTION -->
+    <section id="donation" class="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-amber-600 mb-4 font-semibold tracking-wide">SUPPORT GOD'S WORK</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Partner With Us In Ministry</h2>
+                <div class="flex justify-center mb-8">
+                    <i class="fas fa-seedling text-amber-600 text-5xl"></i>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+                <!-- Tithe -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up">
+                    <div class="rccg-gradient p-8 text-white text-center">
+                        <i class="fas fa-hand-holding-heart text-4xl mb-4"></i>
+                        <h5 class="text-xl font-bold mb-2">Tithe</h5>
+                        <p class="text-amber-100">Honor God with your first fruits</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-6">"Bring the whole tithe into the storehouse..." - Malachi 3:10</p>
+                        <a href="#donate" class="btn-rccg w-full text-center">Give Tithe</a>
+                    </div>
+                </div>
+
+                <!-- Offering -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="blue-gradient p-8 text-white text-center">
+                        <i class="fas fa-gift text-4xl mb-4"></i>
+                        <h5 class="text-xl font-bold mb-2">Offering</h5>
+                        <p class="text-blue-100">Support the ongoing work of ministry</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-6">"Each of you should give what you have decided in your heart..." -
+                            2 Corinthians 9:7</p>
+                        <a href="#donate" class="btn-primary w-full text-center">Give Offering</a>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <div class="gold-gradient p-8 text-white text-center">
+                        <i class="fas fa-hands-helping text-4xl mb-4"></i>
+                        <h5 class="text-xl font-bold mb-2">Projects</h5>
+                        <p class="text-amber-100">Building for the future</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-6">Support our church building project and community outreach
+                            programs</p>
+                        <a href="#donate" class="btn-secondary w-full text-center">Support Projects</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" data-aos="fade-up">
+                <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-8">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Online Giving Made Easy</h4>
+                    <p class="text-gray-600 mb-6">Give securely through our online platform</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button class="btn-primary">
+                            <i class="fab fa-cc-visa mr-2"></i>Credit Card
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fab fa-cc-mastercard mr-2"></i>Debit Card
+                        </button>
+                        <button class="btn-rccg">
+                            <i class="fas fa-mobile-alt mr-2"></i>Mobile Money
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-16 md:py-20 bg-white w-full">
+        <div class="w-full px-4 md:px-6 mx-auto">
+            <div class="text-center mb-12 md:mb-16">
+                <h6 class="text-lg text-rccg-red mb-4 font-semibold tracking-wide">CONNECT WITH US</h6>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Visit Golden Crown Church</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">We'd love to welcome you to our church family</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+                <!-- Contact Info -->
+                <div data-aos="fade-right">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border-t-4 border-rccg-red">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-map-marker-alt text-rccg-red text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="font-bold text-gray-800">Location</h5>
+                                    <p class="text-gray-600">RCCG ( Golden Crown Zone )<br>Falana high school, Ajilosun,
+                                        Ado-Ekiti.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-phone text-rccg-red text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="font-bold text-gray-800">Phone Numbers</h5>
+                                    <p class="text-gray-600">+234 814 007 4633<br>+234 901 234 5678</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-envelope text-rccg-red text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="font-bold text-gray-800">Email</h5>
+                                    <p class="text-gray-600">info@goldencrownrccg.org<br>prayer@goldencrownrccg.org</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-clock text-rccg-red text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="font-bold text-gray-800">Service Hours</h5>
+                                    <p class="text-gray-600">Tuesday : 5:00 PM - 6:00 PM<br>Thursday : 5:00 PM -
+                                        6PM<br>Sunday : 8:30 AM - 11:30AM
+                                        2:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://facebook.com/rccg"
+                                    class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://instagram.com/rccg"
+                                    class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://youtube.com/rccg"
+                                    class="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="https://twitter.com/rccg"
+                                    class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map/Image -->
+                <div data-aos="fade-left">
+                    <div
+                        class="bg-gradient-to-br from-amber-50 to-red-50 rounded-2xl shadow-xl p-6 md:p-8 h-full flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Find Your Way Here</h3>
+                        <div class="relative h-64 md:h-80 rounded-xl overflow-hidden mb-6">
+                            <!-- Google Maps Embed -->
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.9529215788624!2d5.2181703!3d7.5927495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1047fbf481b55f81%3A0x3717b3b9b67322b1!2sRCCG%20GOLDEN%20CROWN%20AREA!5e0!3m2!1sen!2sng!4v1647445678901!5m2!1sen!2sng"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" class="absolute inset-0">
+                            </iframe>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none">
+                            </div>
+                            <div class="absolute bottom-4 left-4 text-white pointer-events-none">
+                                <h4 class="font-bold text-lg">RCCG <br> Golden Crown Zone</h4>
+                                <p class="text-sm">Ajilosun, Ado-Ekiti.</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <a href="https://www.google.com/maps/place/RCCG+GOLDEN+CROWN+AREA/@7.5927495,5.2207452,17z/data=!3m1!4b1!4m6!3m5!1s0x1047fbf481b55f81:0x3717b3b9b67322b1!8m2!3d7.5927495!4d5.2207452!16s%2Fg%2F11ny3fn4h8?entry=ttu"
+                                target="_blank" class="btn-primary w-full text-center">
+                                <i class="fas fa-directions mr-2"></i>Get Directions
+                            </a>
+                            <a href="mailto:info@goldencrownrccg.org" class="btn-secondary w-full text-center">
+                                <i class="fas fa-envelope mr-2"></i>Send Us an Email
+                            </a>
+                            <a href="tel:+2348140074633" class="btn-rccg w-full text-center">
+                                <i class="fas fa-phone mr-2"></i>Call Us Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-gray-300 w-full">
+        <div class="w-full px-4 md:px-6 mx-auto py-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Column 1: Brand (Spans 4 columns) -->
+                <div class="md:col-span-4 lg:col-span-4">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-8 h-8 rccg-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                            <img src="/images/logo2.ico" alt="RCCG Logo" class="w-8 h-8 object-contain rounded-full">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-bold text-white leading-tight">Golden Crown</span>
+
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed text-base mb-6 space-y-2">
+                        A vibrant parish of the Redeemed Christian Church of God committed to making heaven, taking as
+                        many people with us, and having a member of RCCG in every family of all nations.
+                    </p>
+                    <div class="flex space-x-5">
+                        <a href="https://facebook.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://twitter.com/rccggoldencrown" target="_blank"
+                            class="text-gray-400 hover:text-amber-400 text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <!--EXTRA SPACE-->
+                <div class="md:col-span-1 lg:col-span-1">
+
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <h6 class="text-xl font-bold text-white mb-5">QUICK LINKS</h6>
+                    <div class="space-y-3">
+                        <a href="index.html" class="block hover:text-amber-400 transition text-base">Home</a>
+                        <a href="http://rccgonline.org" target="_blank"
+                            class="block hover:text-amber-400 transition text-base">RCCG TV</a>
+                        <a href="programs.html" class="block hover:text-amber-400 transition text-base">Programs</a>
+                        <a href="donation.html" class="block hover:text-amber-400 transition text-base">Give</a>
+                        <a href="contact.html" class="block hover:text-amber-400 transition text-base">Visit
+                            Us</a>
+                    </div>
+                </div>
+
+                <!-- Column 3: About -->
+                <div class="md:col-span-2 lg:col-span-2">
+                    <h6 class="text-xl font-bold text-white mb-5">ABOUT US</h6>
+                    <div class="space-y-3">
+                        <a href="our-mission&vision.html"
+                            class="block hover:text-amber-400 transition text-base">Mission & Vision</a>
+                        <a href="our-history.html" class="block hover:text-amber-400 transition text-base">Our
+                            History</a>
+                        <a href="our-beliefs.html" class="block hover:text-amber-400 transition text-base">Our
+                            Beliefs</a>
+                        <a href="http://rccgonline.org" class="block hover:text-amber-400 transition text-base">RCCG
+                            TV</a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="md:col-span-3 lg:col-span-3">
+                    <h6 class="text-xl font-bold text-white mb-5">CONTACT US</h6>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="text-gray-300 text-base">Golden Crown Church</p>
+                                <p class="text-gray-400 text-sm mt-1">RCCG Zone, Lagos</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="text-gray-300 text-base">+234 814 007 4633</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-amber-400 mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <a href="mailto:info@goldencrownrccg.org"
+                                    class="text-gray-300 hover:text-amber-400 text-base block">
+                                    info@goldencrownrccg.org
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Updates -->
+                    <div class="mt-6">
+                        <p class="text-gray-300 mb-3 text-base">Stay Updated</p>
+                        <div class="flex flex-col gap-3">
+                            <input type="email" placeholder="Your email address"
+                                class="w-full px-4 py-3 bg-slate-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-base">
+                            <button class="btn-secondary px-5 py-3 rounded-lg text-base font-medium w-full">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-slate-800 mt-10 pt-8 text-center">
+                <p class="text-base text-gray-400 mb-2">© 2025 Golden Crown Church (RCCG Zone). All Rights Reserved.</p>
+                <p class="text-sm text-gray-500">Part of The Redeemed Christian Church of God Worldwide</p>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = document.getElementById('mobile-menu-button');
+            if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+
+        // Mobile dropdown toggle
+        document.getElementById('mobile-dropdown-button').addEventListener('click', function () {
+            const dropdownContent = document.getElementById('mobile-dropdown-content');
+            const icon = this.querySelector('i');
+
+            dropdownContent.classList.toggle('hidden');
+
+            if (dropdownContent.classList.contains('hidden')) {
+                icon.className = 'fas fa-chevron-down text-xs';
+            } else {
+                icon.className = 'fas fa-chevron-up text-xs';
+            }
+        });
+
+        // Close mobile dropdown when clicking elsewhere
+        document.addEventListener('click', function (event) {
+            const dropdownButton = document.getElementById('mobile-dropdown-button');
+            const dropdownContent = document.getElementById('mobile-dropdown-content');
+            const icon = dropdownButton.querySelector('i');
+
+            if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+                if (!dropdownContent.classList.contains('hidden')) {
+                    dropdownContent.classList.add('hidden');
+                    icon.className = 'fas fa-chevron-down text-xs';
+                }
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Prevent horizontal scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.style.overflowX = 'hidden';
+            document.documentElement.style.overflowX = 'hidden';
+        });
+
+        // Fix for iOS viewport
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+
+        // Newsletter subscription
+        document.querySelector('.btn-secondary').addEventListener('click', function () {
+            const emailInput = document.querySelector('input[type="email"]');
+            if (emailInput.value) {
+                alert('Thank you for subscribing to Golden Crown Church updates! We\'ll send you weekly devotionals and church news.');
+                emailInput.value = '';
+            } else {
+                alert('Please enter your email address.');
+            }
+        });
+
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function () {
+                // Toggle active class on question
+                this.classList.toggle('active');
+
+                // Toggle icon rotation
+                const icon = this.querySelector('i');
+                icon.classList.toggle('rotate-180');
+
+                // Get the answer element
+                const answer = this.nextElementSibling;
+
+                // Toggle answer visibility
+                if (answer.classList.contains('hidden')) {
+                    answer.classList.remove('hidden');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.classList.add('hidden');
+                    answer.style.maxHeight = null;
+                }
+
+                // Close other open FAQs (optional - for single open at a time)
+                // document.querySelectorAll('.faq-question').forEach(otherQuestion => {
+                //     if (otherQuestion !== this) {
+                //         otherQuestion.classList.remove('active');
+                //         otherQuestion.querySelector('i').classList.remove('rotate-180');
+                //         const otherAnswer = otherQuestion.nextElementSibling;
+                //         otherAnswer.classList.add('hidden');
+                //         otherAnswer.style.maxHeight = null;
+                //     }
+                // });
+            });
+        });
+
+        // Smooth scroll to FAQ section from navigation
+        document.querySelectorAll('a[href="#faq"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const faqSection = document.getElementById('faq');
+                if (faqSection) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+
+                    faqSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
